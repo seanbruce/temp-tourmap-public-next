@@ -1,4 +1,3 @@
-import { memo, useMemo, useEffect } from "react";
 import { clsx } from "clsx";
 import dayjs from "dayjs";
 import {
@@ -6,6 +5,7 @@ import {
   GetBookingAvailabilityByMonthResponse,
 } from "@/apis/get-booking-availability-by-month";
 import Link from "next/link";
+import { SEARCH_DATE_PARAM } from "@/utils/constants";
 
 const WEEKS = ["日", "一", "二", "三", "四", "五", "六"];
 
@@ -71,47 +71,49 @@ const isSelected = (
   return false;
 };
 
-interface MonthViewProps {
+const getAvailabilityStyle = (available?: boolean) => {
+  let indicatorColor = "";
+  let clickable = "";
+  if (available === undefined) {
+    indicatorColor = "bg-gray-500";
+    clickable = "pointer-events-none";
+  } else {
+    if (available) {
+      indicatorColor = "bg-lime-500";
+      clickable = "pointer-events-auto";
+    } else {
+      indicatorColor = "bg-red-500";
+      clickable = "pointer-events-none";
+    }
+  }
+  return {
+    indicatorColor,
+    clickable,
+  };
+};
+interface MonthViewInternalProps {
+  lang: string;
   productGroupId: string;
+  thisYear: number;
+  thisMonth: number;
+  firstDayOfMonth: number;
+  daysInMonth: number;
   date: string;
   searchDate: Date;
+  availability: GetBookingAvailabilityByMonthResponse | undefined;
 }
 
-export default async function MonthView({
+function MonthViewInternal({
+  lang,
   productGroupId,
-  date,
+  thisYear,
+  thisMonth,
+  firstDayOfMonth,
+  daysInMonth,
   searchDate,
-}: MonthViewProps) {
-  const availability = await getBookingAvailabilityByMonth({
-    path: { productGroupId },
-    query: { month: dayjs(searchDate).format("YYYY-MM-DD") },
-  });
-
-  const thisYear = dayjs(searchDate).year();
-  const thisMonth = dayjs(searchDate).month() + 1;
-  const firstDayOfMonth = dayjs(searchDate).startOf("month").day();
-  const daysInMonth = dayjs(searchDate).daysInMonth();
-
-  const getAvailabilityStyle = (available?: boolean) => {
-    let indicatorColor = "";
-    let clickable = "";
-    if (available === undefined) {
-      indicatorColor = "bg-gray-500";
-      clickable = "pointer-events-none";
-    } else {
-      if (available) {
-        indicatorColor = "bg-lime-500";
-        clickable = "pointer-events-auto";
-      } else {
-        indicatorColor = "bg-red-500";
-        clickable = "pointer-events-none";
-      }
-    }
-    return {
-      indicatorColor,
-      clickable,
-    };
-  };
+  availability,
+  date,
+}: MonthViewInternalProps) {
   return (
     <div>
       <div className="h-[40px] flex justify-center items-center bg-black text-white text-[15px] select-none">
@@ -127,7 +129,7 @@ export default async function MonthView({
           </div>
         ))}
       </div>
-      <div className="grid grid-cols-7 gap-px bg-white">
+      <div className="grid grid-cols-7 gap-px bg-white relative">
         {Array.from({ length: 42 }).map((_, index) => {
           const available = getAvailabilityByIndex(
             index,
@@ -174,7 +176,19 @@ export default async function MonthView({
           );
           if (clickable) {
             return (
-              <Link key={index} href="#" {...commonProps}>
+              <Link
+                key={index}
+                replace
+                prefetch={false}
+                href={`/${lang}/booking-online/${productGroupId}/${convertIndexToDayJsBaseOnMonth(
+                  index,
+                  firstDayOfMonth,
+                  searchDate
+                ).format("YYYY-MM-DD")}?${SEARCH_DATE_PARAM}=${dayjs(
+                  searchDate
+                ).format("YYYY-MM-DD")}`}
+                {...commonProps}
+              >
                 {content}
               </Link>
             );
@@ -185,7 +199,73 @@ export default async function MonthView({
             </div>
           );
         })}
+        {!availability && (
+          <div className="absolute inset-0 w-full h-full z-10 pointer-events-none bg-black/75 flex justify-center items-center">
+            <span>讀取中</span>
+          </div>
+        )}
       </div>
     </div>
+  );
+}
+
+interface MonthViewProps {
+  lang: string;
+  productGroupId: string;
+  date: string;
+  searchDate: Date;
+}
+
+export default async function MonthView({
+  lang,
+  productGroupId,
+  date,
+  searchDate,
+}: MonthViewProps) {
+  const availability = await getBookingAvailabilityByMonth({
+    path: { productGroupId },
+    query: { month: dayjs(searchDate).format("YYYY-MM-DD") },
+  });
+
+  const thisYear = dayjs(searchDate).year();
+  const thisMonth = dayjs(searchDate).month() + 1;
+  const firstDayOfMonth = dayjs(searchDate).startOf("month").day();
+  const daysInMonth = dayjs(searchDate).daysInMonth();
+
+  return (
+    <MonthViewInternal
+      lang={lang}
+      productGroupId={productGroupId}
+      thisYear={thisYear}
+      thisMonth={thisMonth}
+      firstDayOfMonth={firstDayOfMonth}
+      daysInMonth={daysInMonth}
+      date={date}
+      searchDate={searchDate}
+      availability={availability}
+    />
+  );
+}
+
+type LoadingProps = Omit<MonthViewProps, "productGroupId" | "lang">;
+
+export async function Loading({ date, searchDate }: LoadingProps) {
+  const thisYear = dayjs(searchDate).year();
+  const thisMonth = dayjs(searchDate).month() + 1;
+  const firstDayOfMonth = dayjs(searchDate).startOf("month").day();
+  const daysInMonth = dayjs(searchDate).daysInMonth();
+
+  return (
+    <MonthViewInternal
+      lang="#"
+      productGroupId="#"
+      thisYear={thisYear}
+      thisMonth={thisMonth}
+      firstDayOfMonth={firstDayOfMonth}
+      daysInMonth={daysInMonth}
+      date={date}
+      searchDate={searchDate}
+      availability={undefined}
+    />
   );
 }

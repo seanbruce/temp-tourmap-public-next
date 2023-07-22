@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretLeft, faCaretRight } from "@fortawesome/free-solid-svg-icons";
 
-import MonthView from "./calender/month-view";
+import MonthView, { Loading } from "./calender/month-view";
 import { SEARCH_DATE_PARAM } from "@/utils/constants";
 
 interface CalenderProps {
@@ -23,12 +23,10 @@ export default function Calender({
   const thisMonth = dayjs(searchDate).toDate();
   const nextMonth = dayjs(thisMonth).add(1, "month").toDate();
 
-  const getNewUrlBySearchDate = (date: dayjs.Dayjs) => {
+  const getNewUrlBySearchDate = (searchDate: dayjs.Dayjs) => {
     return `/${lang}/booking-online/${productGroupId}/${date}?${SEARCH_DATE_PARAM}=${dayjs(
-      date
-    )
-      .subtract(1, "month")
-      .format("YYYY-MM-DD")}`;
+      searchDate
+    ).format("YYYY-MM-DD")}`;
   };
 
   return (
@@ -45,7 +43,7 @@ export default function Calender({
           href={getNewUrlBySearchDate(dayjs())}
           className="py-1 px-2 rounded hover:bg-[#7bb543] transition-colors"
         >
-          選擇今日
+          本月
         </Link>
         <Link
           href={getNewUrlBySearchDate(dayjs(thisMonth).add(1, "month"))}
@@ -58,8 +56,9 @@ export default function Calender({
       <div className="relative">
         <div className="flex flex-nowrap gap-7 mb-2">
           <div className="grow">
-            <Suspense fallback={<div>加載中</div>}>
+            <Suspense fallback={<Loading date={date} searchDate={thisMonth} />}>
               <MonthView
+                lang={lang}
                 productGroupId={productGroupId}
                 date={date}
                 searchDate={thisMonth}
@@ -67,8 +66,9 @@ export default function Calender({
             </Suspense>
           </div>
           <div className="grow max-[980px]:hidden">
-            <Suspense fallback={<div>加載中</div>}>
+            <Suspense fallback={<Loading date={date} searchDate={nextMonth} />}>
               <MonthView
+                lang={lang}
                 productGroupId={productGroupId}
                 date={date}
                 searchDate={nextMonth}
