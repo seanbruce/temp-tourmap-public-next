@@ -2,9 +2,13 @@ import "../globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import clsx from "clsx";
+import "dayjs/locale/zh-tw";
+import dayjs from "dayjs";
 
 import Header from "./_layout/header";
 import Footer from "./_layout/footer";
+
+dayjs.locale("zh-tw");
 
 const inter = Inter({ subsets: ["latin"] });
 

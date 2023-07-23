@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretLeft, faCaretRight } from "@fortawesome/free-solid-svg-icons";
 
 import MonthView, { Loading } from "./calender/month-view";
-import { SEARCH_DATE_PARAM } from "@/utils/constants";
 
 interface CalenderProps {
   lang: string;
@@ -24,7 +23,7 @@ export default function Calender({
   const nextMonth = dayjs(thisMonth).add(1, "month").toDate();
 
   const getNewUrlBySearchDate = (searchDate: dayjs.Dayjs) => {
-    return `/${lang}/booking-online/${productGroupId}/${date}?${SEARCH_DATE_PARAM}=${dayjs(
+    return `/${lang}/booking-online/${productGroupId}/${date}/${dayjs(
       searchDate
     ).format("YYYY-MM-DD")}`;
   };
@@ -34,6 +33,7 @@ export default function Calender({
       <div className="h-[40px] flex justify-between items-center bg-[#88c84b] text-white px-2">
         <Link
           href={getNewUrlBySearchDate(dayjs(thisMonth).subtract(1, "month"))}
+          replace
           className="py-1 px-2 rounded hover:bg-[#7bb543] transition-colors inline-flex items-center"
         >
           <FontAwesomeIcon icon={faCaretLeft} className="w-2 h-4" />
@@ -47,6 +47,7 @@ export default function Calender({
         </Link>
         <Link
           href={getNewUrlBySearchDate(dayjs(thisMonth).add(1, "month"))}
+          replace
           className="py-1 px-2 rounded hover:bg-[#7bb543] transition-colors inline-flex items-center"
         >
           下個月

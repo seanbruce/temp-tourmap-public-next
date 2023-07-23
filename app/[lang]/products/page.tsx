@@ -6,7 +6,6 @@ import CompanyCarousel from "@/components/company-carousel";
 import PageContainer from "@/components/page-container";
 import { getProductGroupList } from "@/apis/get-product-group-list";
 import campingGroupImage from "./_assets/camping.png";
-import { SEARCH_DATE_PARAM } from "@/utils/constants";
 
 interface BookingOnlinePageProps {
   params: { lang: string };
@@ -27,7 +26,7 @@ export default async function BookingOnlinePage({
             .map((productGroup) => (
               <Link
                 key={productGroup.productGroup.id}
-                href={`/${lang}/booking-online/${productGroup.productGroup.id}/${formattedToday}?${SEARCH_DATE_PARAM}=${formattedToday}`}
+                href={`/${lang}/booking-online/${productGroup.productGroup.id}/${formattedToday}/${formattedToday}`}
                 className="flex flex-col items-center"
               >
                 <div className="relative w-24 h-24 lg:w-36 lg:h-36 block">

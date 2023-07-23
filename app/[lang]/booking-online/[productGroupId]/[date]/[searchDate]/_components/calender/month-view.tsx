@@ -5,7 +5,6 @@ import {
   GetBookingAvailabilityByMonthResponse,
 } from "@/apis/get-booking-availability-by-month";
 import Link from "next/link";
-import { SEARCH_DATE_PARAM } from "@/utils/constants";
 
 const WEEKS = ["日", "一", "二", "三", "四", "五", "六"];
 
@@ -184,9 +183,9 @@ function MonthViewInternal({
                   index,
                   firstDayOfMonth,
                   searchDate
-                ).format("YYYY-MM-DD")}?${SEARCH_DATE_PARAM}=${dayjs(
-                  searchDate
-                ).format("YYYY-MM-DD")}`}
+                ).format("YYYY-MM-DD")}/${dayjs(searchDate).format(
+                  "YYYY-MM-DD"
+                )}`}
                 {...commonProps}
               >
                 {content}
