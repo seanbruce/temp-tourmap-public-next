@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretLeft, faCaretRight } from "@fortawesome/free-solid-svg-icons";
 
 import MonthView, { Loading } from "./calender/month-view";
+import ChangeMonthButton from "./calender/change-month-button";
 
 interface CalenderProps {
   lang: string;
@@ -22,37 +23,40 @@ export default function Calender({
   const thisMonth = dayjs(searchDate).toDate();
   const nextMonth = dayjs(thisMonth).add(1, "month").toDate();
 
-  const getNewUrlBySearchDate = (searchDate: dayjs.Dayjs) => {
-    return `/${lang}/booking-online/${productGroupId}/${date}/${dayjs(
-      searchDate
-    ).format("YYYY-MM-DD")}`;
-  };
-
   return (
     <div className="h-[418px] mb-5 relative">
       <div className="h-[40px] flex justify-between items-center bg-[#88c84b] text-white px-2">
-        <Link
-          href={getNewUrlBySearchDate(dayjs(thisMonth).subtract(1, "month"))}
-          replace
-          className="py-1 px-2 rounded hover:bg-[#7bb543] transition-colors inline-flex items-center"
-        >
-          <FontAwesomeIcon icon={faCaretLeft} className="w-2 h-4" />
-          上個月
-        </Link>
-        <Link
-          href={getNewUrlBySearchDate(dayjs())}
-          className="py-1 px-2 rounded hover:bg-[#7bb543] transition-colors"
-        >
-          本月
-        </Link>
-        <Link
-          href={getNewUrlBySearchDate(dayjs(thisMonth).add(1, "month"))}
-          replace
-          className="py-1 px-2 rounded hover:bg-[#7bb543] transition-colors inline-flex items-center"
-        >
-          下個月
-          <FontAwesomeIcon icon={faCaretRight} className="w-2 h-4" />
-        </Link>
+        <ChangeMonthButton
+          title={
+            <>
+              <FontAwesomeIcon icon={faCaretLeft} className="w-2 h-4" />
+              上個月
+            </>
+          }
+          lang={lang}
+          productGroupId={productGroupId}
+          date={date}
+          month={dayjs(thisMonth).subtract(1, "month").format("YYYY-MM-DD")}
+        />
+        <ChangeMonthButton
+          title="本月"
+          lang={lang}
+          productGroupId={productGroupId}
+          date={date}
+          month={dayjs().format("YYYY-MM-DD")}
+        />
+        <ChangeMonthButton
+          title={
+            <>
+              下個月
+              <FontAwesomeIcon icon={faCaretRight} className="w-2 h-4" />
+            </>
+          }
+          lang={lang}
+          productGroupId={productGroupId}
+          date={date}
+          month={dayjs(thisMonth).add(1, "month").format("YYYY-MM-DD")}
+        />
       </div>
       <div className="relative">
         <div className="flex flex-nowrap gap-7 mb-2">

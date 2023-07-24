@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import Negotiator from "negotiator";
 import { match } from "@formatjs/intl-localematcher";
 import { NextRequest } from "next/server";
+import { v4 } from "uuid";
+import { userUUIDCookieName } from "./utils/constants";
 
 // 下面陣列中的第一個語言是預設語言
 let locales = ["zh-TW", "en-US"];
@@ -21,12 +23,22 @@ export async function middleware(request: NextRequest) {
     (locale) => !pathname.startsWith(`/${locale}`) && pathname !== `/${locale}`
   );
 
+  let response: NextResponse<unknown>;
   if (pathnameIsMissingLocale) {
     const locale = getLocale(request);
-    return NextResponse.redirect(
+    response = NextResponse.redirect(
       new URL(`/${locale}/${pathname}`, `${request.url}`)
     );
+  } else {
+    response = NextResponse.next();
   }
+  const hasNoUserUUID = !request.cookies.has(userUUIDCookieName);
+  if (hasNoUserUUID) {
+    response.cookies.set(userUUIDCookieName, v4(), {
+      maxAge: 60 * 60 * 24 * 30,
+    });
+  }
+  return response;
 }
 
 export const config = {

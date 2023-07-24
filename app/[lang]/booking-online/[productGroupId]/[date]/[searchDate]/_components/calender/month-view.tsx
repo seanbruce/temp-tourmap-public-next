@@ -5,6 +5,7 @@ import {
   GetBookingAvailabilityByMonthResponse,
 } from "@/apis/get-booking-availability-by-month";
 import Link from "next/link";
+import DateCell from "./month-view-internal/date-cell";
 
 const WEEKS = ["日", "一", "二", "三", "四", "五", "六"];
 
@@ -173,23 +174,19 @@ function MonthViewInternal({
               </span>
             </>
           );
-          if (clickable) {
+          if (available) {
             return (
-              <Link
+              <DateCell
                 key={index}
-                replace
-                prefetch={false}
-                href={`/${lang}/booking-online/${productGroupId}/${convertIndexToDayJsBaseOnMonth(
-                  index,
-                  firstDayOfMonth,
-                  searchDate
-                ).format("YYYY-MM-DD")}/${dayjs(searchDate).format(
-                  "YYYY-MM-DD"
-                )}`}
+                index={index}
+                lang={lang}
+                productGroupId={productGroupId}
+                firstDayOfMonth={firstDayOfMonth}
+                searchDate={dayjs(searchDate).format("YYYY-MM-DD")}
                 {...commonProps}
               >
                 {content}
-              </Link>
+              </DateCell>
             );
           }
           return (
@@ -246,7 +243,10 @@ export default async function MonthView({
   );
 }
 
-type LoadingProps = Omit<MonthViewProps, "productGroupId" | "lang">;
+type LoadingProps = Omit<
+  MonthViewProps,
+  "productGroupId" | "lang" | "campingAreaId"
+>;
 
 export async function Loading({ date, searchDate }: LoadingProps) {
   const thisYear = dayjs(searchDate).year();

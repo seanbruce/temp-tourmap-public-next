@@ -55,7 +55,7 @@ export default function RootLayout({
         />
         <div className="relative mx-auto w-full lg:w-[980px] flex flex-col max-[980px]:pt-[60px] min-h-[100dvh]">
           <Header />
-          {children}
+          <div className="flex-auto">{children}</div>
           <Footer />
         </div>
       </body>
