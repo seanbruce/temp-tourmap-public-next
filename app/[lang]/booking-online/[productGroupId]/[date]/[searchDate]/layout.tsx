@@ -6,6 +6,7 @@ import CampingCarousel from "./_components/camping-carousel";
 import BookingStepper from "@/components/booking-stepper";
 import Calender from "./_components/calender";
 import Discount from "./_components/discount";
+import ScrollToTopButton from "@/components/scroll-to-top-button";
 
 interface LayoutProps {
   params: {
@@ -36,6 +37,7 @@ export default async function Layout({
         />
         <Discount />
         {children}
+        <ScrollToTopButton target="calender" />
       </PageContainer>
     </>
   );
