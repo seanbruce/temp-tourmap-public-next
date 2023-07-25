@@ -44,9 +44,7 @@ export default function DateCell({
         index,
         firstDayOfMonth,
         dayjs(searchDate).toDate()
-      ).format("YYYY-MM-DD")}/${dayjs(searchDate).format(
-        "YYYY-MM-DD"
-      )}/${campingAreaId}`}
+      ).format("YYYY-MM-DD")}/${searchDate}/${campingAreaId}`}
       className={className}
       style={style}
     >

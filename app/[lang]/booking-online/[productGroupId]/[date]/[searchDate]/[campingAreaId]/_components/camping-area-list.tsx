@@ -2,17 +2,18 @@ import Image from "next/image";
 import Link from "next/link";
 import clsx from "clsx";
 import dayjs from "dayjs";
-import { GetCampingAreaListResponse } from "@/apis/get-camping-area-list";
 import campingAreaImage from "@/public/assets/camping-area.png";
 import SearchBar from "./camping-area-list/search-bar";
+import { getCampingAreaList } from "@/apis/get-camping-area-list";
+import { getPrimaryProductList } from "@/apis/get-primary-product-list";
 
 interface CampingAreaListProps {
   lang: string;
   productGroupId: string;
+  campingName: string;
   date: string;
   searchDate: string;
   campingAreaId: string;
-  campingAreaList: GetCampingAreaListResponse;
 }
 
 export default async function CampingAreaList({
@@ -21,14 +22,29 @@ export default async function CampingAreaList({
   date,
   searchDate,
   campingAreaId,
-  campingAreaList,
+  campingName,
 }: CampingAreaListProps) {
+  const campingAreaList = await getCampingAreaList();
+
+  const primaryProductLists = await Promise.all(
+    campingAreaList.map((area) =>
+      getPrimaryProductList({
+        query: {
+          CampingAreaId: area.id,
+          CampingName: campingName,
+          Date: date,
+          ProductGroupId: productGroupId,
+        },
+      })
+    )
+  );
+
   const COMMON_AREA_BUTTON_STYLE =
-    "px-4 py-1 hover:bg-brand-gold-dark hover:text-black transition-colors";
+    "px-4 py-1 hover:bg-brand-gold-dark hover:text-black transition-colors relative";
   const HIGHLIGHTED_AREA_BUTTON_STYLE = "bg-brand-gold text-black";
   const areas = (
     <div className="flex gap-1 ">
-      {campingAreaList.map((campingArea) => (
+      {campingAreaList.map((campingArea, index) => (
         <Link
           key={campingArea.id}
           href={`/${lang}/booking-online/${productGroupId}/${date}/${dayjs(
@@ -42,6 +58,11 @@ export default async function CampingAreaList({
           )}
         >
           {campingArea.displayName}
+          {primaryProductLists[index].length > 0 && (
+            <span className="absolute inline-flex text-xs w-5 h-5 right-0 top-0 bg-red-400 text-white rounded-full -translate-y-1/2 justify-center items-center">
+              {primaryProductLists[index].length}
+            </span>
+          )}
         </Link>
       ))}
     </div>

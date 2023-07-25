@@ -1,13 +1,28 @@
 import { GetPrimaryProductListResponse } from "@/apis/get-primary-product-list";
 import PrimaryProductItem from "./primary-product-list/primary-product-item";
+import { getPrimaryProductList } from "@/apis/get-primary-product-list";
 
 interface PrimaryProductListProps {
-  primaryProductList: GetPrimaryProductListResponse;
+  campingAreaId: string;
+  campingName: string;
+  date: string;
+  productGroupId: string;
 }
 
 export default async function PrimaryProductList({
-  primaryProductList,
+  campingAreaId,
+  campingName,
+  date,
+  productGroupId,
 }: PrimaryProductListProps) {
+  const primaryProductList = await getPrimaryProductList({
+    query: {
+      CampingAreaId: campingAreaId,
+      CampingName: campingName,
+      Date: date,
+      ProductGroupId: productGroupId,
+    },
+  });
   let primaryProductListUI = null;
 
   if (primaryProductList.length === 0) {

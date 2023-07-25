@@ -2,8 +2,14 @@ import { Suspense } from "react";
 import CampingAreaList from "./_components/camping-area-list";
 import PrimaryProductList from "./_components/primary-product-list";
 import { searchParamNames } from "@/utils/constants";
-import { getCampingAreaList } from "@/apis/get-camping-area-list";
-import { getPrimaryProductList } from "@/apis/get-primary-product-list";
+import {
+  getCampingAreaList,
+  preload as preloadCampingAreaList,
+} from "@/apis/get-camping-area-list";
+import {
+  getPrimaryProductList,
+  preload as preloadPrimaryProductList,
+} from "@/apis/get-primary-product-list";
 import { getCartByUser } from "@/apis/get-cart-by-user";
 import FloatActionButtons, {
   FloatActionButton,
@@ -26,26 +32,22 @@ export default async function Page({
   params: { lang, productGroupId, date, searchDate, campingAreaId },
   searchParams,
 }: PageProps) {
-  const CampingName =
+  const campingName =
     typeof searchParams[searchParamNames.campingName] === "string"
       ? (searchParams[searchParamNames.campingName] as string)
       : "";
 
-  const cartData = getCartByUser();
-  const campingAreaListData = getCampingAreaList();
-  const primaryProductListData = getPrimaryProductList({
+  preloadCampingAreaList();
+  preloadPrimaryProductList({
     query: {
       CampingAreaId: campingAreaId,
-      CampingName,
+      CampingName: campingName,
       Date: date,
       ProductGroupId: productGroupId,
     },
   });
-  const [cart, campingAreaList, primaryProductList] = await Promise.all([
-    cartData,
-    campingAreaListData,
-    primaryProductListData,
-  ]);
+  const cartData = getCartByUser();
+  const [cart] = await Promise.all([cartData]);
 
   const isEmptyCart =
     !cart.shoppingCartItems || cart.shoppingCartItems.length === 0;
@@ -55,14 +57,19 @@ export default async function Page({
       <Suspense fallback={null}>
         <CampingAreaList
           lang={lang}
+          campingName={campingName}
           productGroupId={productGroupId}
           date={date}
           searchDate={searchDate}
           campingAreaId={campingAreaId}
-          campingAreaList={campingAreaList}
         />
       </Suspense>
-      <PrimaryProductList primaryProductList={primaryProductList} />
+      <PrimaryProductList
+        campingAreaId={campingAreaId}
+        campingName={campingName}
+        date={date}
+        productGroupId={productGroupId}
+      />
       <FloatActionButtons
         lang={lang}
         stepBackwardBtn={null}
