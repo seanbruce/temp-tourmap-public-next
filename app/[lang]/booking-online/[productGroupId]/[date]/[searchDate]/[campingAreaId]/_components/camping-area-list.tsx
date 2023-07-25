@@ -43,7 +43,7 @@ export default async function CampingAreaList({
     "px-4 py-1 hover:bg-brand-gold-dark hover:text-black transition-colors relative";
   const HIGHLIGHTED_AREA_BUTTON_STYLE = "bg-brand-gold text-black";
   const areas = (
-    <div className="flex gap-1 ">
+    <div className="flex gap-2">
       {campingAreaList.map((campingArea, index) => (
         <Link
           key={campingArea.id}
@@ -59,7 +59,7 @@ export default async function CampingAreaList({
         >
           {campingArea.displayName}
           {primaryProductLists[index].length > 0 && (
-            <span className="absolute inline-flex text-xs w-5 h-5 right-0 top-0 bg-red-400 text-white rounded-full -translate-y-1/2 justify-center items-center">
+            <span className="absolute inline-flex text-xs w-5 h-5 right-0 top-0 bg-red-400 text-white rounded-full -translate-y-1/2 translate-x-1/2 justify-center items-center">
               {primaryProductLists[index].length}
             </span>
           )}
