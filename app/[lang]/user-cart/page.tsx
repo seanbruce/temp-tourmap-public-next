@@ -130,9 +130,14 @@ export default async function Page() {
         ))}
       </Section>
       <Section title="其它備註">{cart.customerRemark}</Section>
-      <form action={quickCheckAction}>
-        <FloatActionBar action={<QuickCheckButton />} />
-      </form>
+
+      <FloatActionBar
+        action={
+          <form action={quickCheckAction} className="flex-auto">
+            <QuickCheckButton />
+          </form>
+        }
+      />
     </PageContainer>
   );
 }

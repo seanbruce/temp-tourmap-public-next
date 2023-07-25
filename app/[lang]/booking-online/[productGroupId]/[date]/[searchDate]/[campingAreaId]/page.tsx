@@ -1,15 +1,13 @@
 import { Suspense } from "react";
-import CampingAreaList from "./_components/camping-area-list";
-import PrimaryProductList from "./_components/primary-product-list";
+import CampingAreaList, {
+  Loading as CampingAreaListLoading,
+} from "./_components/camping-area-list";
+import PrimaryProductList, {
+  Loading as PrimaryProductListLoading,
+} from "./_components/primary-product-list";
 import { searchParamNames } from "@/utils/constants";
-import {
-  getCampingAreaList,
-  preload as preloadCampingAreaList,
-} from "@/apis/get-camping-area-list";
-import {
-  getPrimaryProductList,
-  preload as preloadPrimaryProductList,
-} from "@/apis/get-primary-product-list";
+import { preload as preloadCampingAreaList } from "@/apis/get-camping-area-list";
+import { preload as preloadPrimaryProductList } from "@/apis/get-primary-product-list";
 import { getCartByUser } from "@/apis/get-cart-by-user";
 import FloatActionButtons, {
   FloatActionButton,
@@ -54,7 +52,7 @@ export default async function Page({
 
   return (
     <>
-      <Suspense fallback={null}>
+      <Suspense fallback={<CampingAreaListLoading />}>
         <CampingAreaList
           lang={lang}
           campingName={campingName}
@@ -64,12 +62,14 @@ export default async function Page({
           campingAreaId={campingAreaId}
         />
       </Suspense>
-      <PrimaryProductList
-        campingAreaId={campingAreaId}
-        campingName={campingName}
-        date={date}
-        productGroupId={productGroupId}
-      />
+      <Suspense fallback={<PrimaryProductListLoading />}>
+        <PrimaryProductList
+          campingAreaId={campingAreaId}
+          campingName={campingName}
+          date={date}
+          productGroupId={productGroupId}
+        />
+      </Suspense>
       <Suspense fallback={null}>
         <FloatActionButtons
           lang={lang}

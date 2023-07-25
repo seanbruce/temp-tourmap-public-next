@@ -11,6 +11,7 @@ export default function QuickCheckButton() {
       type="submit"
       formAction={quickCheckAction}
       disabled={pending && action === quickCheckAction}
+      className="w-full h-full"
     >
       {pending && action === quickCheckAction ? "結賬中..." : "快速結賬"}
     </FloatActionButton>

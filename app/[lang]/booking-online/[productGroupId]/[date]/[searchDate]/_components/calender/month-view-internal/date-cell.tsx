@@ -5,6 +5,7 @@ import dayjs from "dayjs";
 import { useSelectedLayoutSegment } from "next/navigation";
 
 interface DateCellProps {
+  currentSearchDate: string;
   index: number;
   lang: string;
   productGroupId: string;
@@ -26,6 +27,7 @@ const convertIndexToDayJsBaseOnMonth = (
 };
 
 export default function DateCell({
+  currentSearchDate,
   index,
   lang,
   productGroupId,
@@ -44,7 +46,7 @@ export default function DateCell({
         index,
         firstDayOfMonth,
         dayjs(searchDate).toDate()
-      ).format("YYYY-MM-DD")}/${searchDate}/${campingAreaId}`}
+      ).format("YYYY-MM-DD")}/${currentSearchDate}/${campingAreaId}`}
       className={className}
       style={style}
     >

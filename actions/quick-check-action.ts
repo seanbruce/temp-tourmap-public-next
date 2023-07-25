@@ -1,6 +1,7 @@
 "use server";
 
 import { getCartByUser } from "@/apis/get-cart-by-user";
+import tags from "@/apis/tags";
 import { NEXT_PUBLIC_API_URL } from "@/environments";
 import { revalidateTag } from "next/cache";
 
@@ -14,6 +15,7 @@ export async function quickCheckAction() {
   );
 
   if (response.ok) {
-    revalidateTag("userCart");
+    revalidateTag(tags.userCart);
+    revalidateTag(tags.bookingAvailability);
   }
 }

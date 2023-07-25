@@ -92,6 +92,7 @@ const getAvailabilityStyle = (available?: boolean) => {
   };
 };
 interface MonthViewInternalProps {
+  currentSearchDate: string;
   lang: string;
   productGroupId: string;
   thisYear: number;
@@ -104,6 +105,7 @@ interface MonthViewInternalProps {
 }
 
 function MonthViewInternal({
+  currentSearchDate,
   lang,
   productGroupId,
   thisYear,
@@ -177,6 +179,7 @@ function MonthViewInternal({
           if (available) {
             return (
               <DateCell
+                currentSearchDate={currentSearchDate}
                 key={index}
                 index={index}
                 lang={lang}
@@ -210,9 +213,11 @@ interface MonthViewProps {
   productGroupId: string;
   date: string;
   searchDate: Date;
+  currentSearchDate: string;
 }
 
 export default async function MonthView({
+  currentSearchDate,
   lang,
   productGroupId,
   date,
@@ -230,6 +235,7 @@ export default async function MonthView({
 
   return (
     <MonthViewInternal
+      currentSearchDate={currentSearchDate}
       lang={lang}
       productGroupId={productGroupId}
       thisYear={thisYear}
@@ -245,7 +251,7 @@ export default async function MonthView({
 
 type LoadingProps = Omit<
   MonthViewProps,
-  "productGroupId" | "lang" | "campingAreaId"
+  "productGroupId" | "lang" | "campingAreaId" | "currentSearchDate"
 >;
 
 export async function Loading({ date, searchDate }: LoadingProps) {
@@ -256,6 +262,7 @@ export async function Loading({ date, searchDate }: LoadingProps) {
 
   return (
     <MonthViewInternal
+      currentSearchDate="#"
       lang="#"
       productGroupId="#"
       thisYear={thisYear}

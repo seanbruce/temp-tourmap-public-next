@@ -96,7 +96,7 @@ export default async function FloatActionButtons({
           <Link
             href={`/${lang}/user-cart`}
             prefetch={false}
-            className="relative text-black px-6 py-1 rounded-md font-bold flex items-center"
+            className="relative text-black px-6 py-1 rounded-md font-bold flex justify-center items-center w-full h-full "
           >
             <FontAwesomeIcon
               icon={faCartArrowDown}

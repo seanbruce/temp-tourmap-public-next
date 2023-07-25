@@ -67,6 +67,7 @@ export default function Calender({
                 productGroupId={productGroupId}
                 date={date}
                 searchDate={thisMonth}
+                currentSearchDate={searchDate}
               />
             </Suspense>
           </div>
@@ -77,6 +78,7 @@ export default function Calender({
                 productGroupId={productGroupId}
                 date={date}
                 searchDate={nextMonth}
+                currentSearchDate={searchDate}
               />
             </Suspense>
           </div>

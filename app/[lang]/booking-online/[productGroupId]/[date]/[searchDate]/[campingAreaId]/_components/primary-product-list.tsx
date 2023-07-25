@@ -1,6 +1,7 @@
 import { GetPrimaryProductListResponse } from "@/apis/get-primary-product-list";
 import PrimaryProductItem from "./primary-product-list/primary-product-item";
 import { getPrimaryProductList } from "@/apis/get-primary-product-list";
+import clsx from "clsx";
 
 interface PrimaryProductListProps {
   campingAreaId: string;
@@ -40,9 +41,33 @@ export default async function PrimaryProductList({
     ));
   }
 
+  return <ListContainer>{primaryProductListUI}</ListContainer>;
+}
+
+interface ListContainerProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+function ListContainer({ children, className }: ListContainerProps) {
   return (
-    <div className="px-4 grid grid-cols-2 gap-4 max-sm:grid-cols-1 mb-12">
-      {primaryProductListUI}
+    <div
+      className={clsx(
+        "px-4 grid grid-cols-2 gap-4 max-sm:grid-cols-1 mb-12",
+        className
+      )}
+    >
+      {children}
     </div>
+  );
+}
+
+export function Loading() {
+  return (
+    <ListContainer className="animate-pulse">
+      {Array.from({ length: 6 }).map((_, index) => (
+        <div key={index} className="h-[580px] bg-gray-700" />
+      ))}
+    </ListContainer>
   );
 }

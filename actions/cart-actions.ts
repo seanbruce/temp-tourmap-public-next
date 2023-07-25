@@ -1,6 +1,7 @@
 "use server";
 
 import { getCartByUser } from "@/apis/get-cart-by-user";
+import tags from "@/apis/tags";
 import { NEXT_PUBLIC_API_URL } from "@/environments";
 import { paths } from "@/type/api";
 import { revalidateTag } from "next/cache";
@@ -57,7 +58,7 @@ export async function addPrimaryProductToCart(data: FormData) {
   );
 
   if (response.ok) {
-    revalidateTag("userCart");
+    revalidateTag(tags.userCart);
   }
 }
 
@@ -107,6 +108,6 @@ export async function removePrimaryProductToCart(data: FormData) {
   );
 
   if (response.ok) {
-    revalidateTag("userCart");
+    revalidateTag(tags.userCart);
   }
 }
