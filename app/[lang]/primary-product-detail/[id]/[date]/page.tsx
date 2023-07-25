@@ -30,7 +30,6 @@ export default async function Page({ params: { id, date } }: PageProps) {
     (item) =>
       `${item.productId}${item.date}` === `${id}${decodeURIComponent(date)}`
   );
-  console.log({ id, date, isInCart, cartItems: cart?.shoppingCartItems });
   return (
     <PageContainer>
       <div className="h-[400px] mx-auto mb-4">

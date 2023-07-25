@@ -70,21 +70,23 @@ export default async function Page({
         date={date}
         productGroupId={productGroupId}
       />
-      <FloatActionButtons
-        lang={lang}
-        stepBackwardBtn={null}
-        stepForwardBtn={
-          <FloatActionButton disabled={isEmptyCart}>
-            {isEmptyCart ? (
-              "請選擇一個產品"
+      <Suspense fallback={null}>
+        <FloatActionButtons
+          lang={lang}
+          stepBackwardBtn={null}
+          stepForwardBtn={
+            isEmptyCart ? (
+              <FloatActionButton disabled={isEmptyCart}>
+                請選擇一個產品
+              </FloatActionButton>
             ) : (
               <form action={quickCheckAction}>
                 <QuickCheckButton />
               </form>
-            )}
-          </FloatActionButton>
-        }
-      />
+            )
+          }
+        />
+      </Suspense>
     </>
   );
 }

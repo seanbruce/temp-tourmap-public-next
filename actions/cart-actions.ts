@@ -17,7 +17,6 @@ type UpdateShoppingCartBody = RequiredDeep<
 >["requestBody"]["content"]["application/json"];
 
 export async function addPrimaryProductToCart(data: FormData) {
-  console.log("addPrimaryProductToCart");
   const cart = await getCartByUser();
 
   const parsedData = AddPrimaryProductToCartDataScheme.parse({
@@ -68,7 +67,6 @@ const RemovePrimaryProductToCartDataScheme = z.object({
 });
 
 export async function removePrimaryProductToCart(data: FormData) {
-  console.log("removePrimaryProductToCart");
   const cart = await getCartByUser();
 
   const parsedData = RemovePrimaryProductToCartDataScheme.parse({
