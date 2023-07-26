@@ -4,7 +4,7 @@ import FloatActionBar from "@/components/float-action-bar";
 import PageContainer from "@/components/page-container";
 import AddCartButton from "./_components/add-cart-button";
 import RemoveCartButton from "./_components/remove-cart-button";
-import { addPrimaryProductToCart } from "@/actions/cart-actions";
+import Carousel from "@/components/carousel";
 
 interface PageProps {
   params: {
@@ -30,27 +30,22 @@ export default async function Page({ params: { id, date } }: PageProps) {
     (item) =>
       `${item.productId}${item.date}` === `${id}${decodeURIComponent(date)}`
   );
+
+  const images = primaryProductDetail.campingImages?.map(({ id }) => id) ?? [];
   return (
     <PageContainer>
-      <div className="h-[400px] mx-auto mb-4">
-        {/* <Swiper
-          modules={[Autoplay, Pagination, Navigation]}
-          spaceBetween={50}
-          autoplay
-          pagination
-          navigation
-          loop
-        >
-          {data.campingImages?.map(({ id, url }) => (
-            <SwiperSlide key={id}>
-              <img
-                src={url!}
-                className="object-cover h-[400px] w-full"
-                alt=""
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper> */}
+      <div className="w-full h-[400px] mx-auto mb-4">
+        {images.length > 0 ? (
+          <Carousel
+            images={
+              primaryProductDetail.campingImages?.map(({ id }) => id) ?? []
+            }
+          />
+        ) : (
+          <div className="w-full h-full flex justify-center items-center text-white bg-black/50">
+            <span>暫無圖片</span>
+          </div>
+        )}
       </div>
       <p className="text-xl font-bold mb-2">
         {primaryProductDetail.product.displayName}

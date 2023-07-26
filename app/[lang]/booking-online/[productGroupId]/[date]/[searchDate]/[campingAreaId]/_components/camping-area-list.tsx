@@ -113,12 +113,12 @@ export function Loading() {
       areas={
         <div className="flex gap-2 animate-pulse ">
           {Array.from({ length: 3 }).map((_, index) => (
-            <div key={index} className="w-[58px] h-[32px] bg-gray-700" />
+            <div key={index} className="w-[58px] h-[32px] bg-skeleton" />
           ))}
         </div>
       }
       searchBar={<SearchBar />}
-      carousel={<div className="w-full h-full bg-gray-700 animate-pulse" />}
+      carousel={<div className="w-full h-full bg-skeleton animate-pulse" />}
     />
   );
 }

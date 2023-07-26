@@ -1,3 +1,5 @@
+const colors = require("tailwindcss/colors");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -15,6 +17,7 @@ module.exports = {
         "brand-green": "#76b532",
         "brand-green-light": "#8bcc45",
         "brand-green-dark": "#649a2b",
+        skeleton: colors.gray["800"],
       },
       screens: {
         laptop: "980px",

@@ -1,12 +1,12 @@
 "use client";
 
-import Image from "next/image";
 import campingImage from "@/public/assets/camping.jpg";
+import Carousel from "@/components/carousel";
 
 export default function CampingCarousel() {
   return (
     <div className="w-full h-[400px] mx-auto mb-3 relative overflow-hidden">
-      <Image src={campingImage} alt="camping" fill className="object-cover" />
+      <Carousel images={[campingImage]} />
     </div>
   );
 }

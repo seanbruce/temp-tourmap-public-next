@@ -66,7 +66,7 @@ export function Loading() {
   return (
     <ListContainer className="animate-pulse">
       {Array.from({ length: 6 }).map((_, index) => (
-        <div key={index} className="h-[580px] bg-gray-700" />
+        <div key={index} className="h-[580px] bg-skeleton" />
       ))}
     </ListContainer>
   );
