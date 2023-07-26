@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useSelectedLayoutSegment } from "next/navigation";
 import dayjs from "dayjs";
+import clsx from "clsx";
 
 interface ChangeMonthButtonProps {
   title: React.ReactNode;
@@ -10,6 +11,7 @@ interface ChangeMonthButtonProps {
   productGroupId: string;
   date: string;
   month: string;
+  disabled?: boolean;
 }
 
 export default function ChangeMonthButton({
@@ -18,6 +20,7 @@ export default function ChangeMonthButton({
   productGroupId,
   date,
   month,
+  disabled,
 }: ChangeMonthButtonProps) {
   const campingAreaId = useSelectedLayoutSegment();
 
@@ -32,7 +35,17 @@ export default function ChangeMonthButton({
       href={getNewUrlBySearchDate(month)}
       replace
       scroll={false}
-      className="py-1 px-2 rounded hover:bg-[#7bb543] transition-colors inline-flex items-center"
+      className={clsx(
+        "py-1",
+        "px-2",
+        "rounded",
+        "hover:bg-[#7bb543]",
+        "transition-colors",
+        "inline-flex",
+        "items-center",
+        disabled ? "pointer-events-none" : "pointer-events-auto",
+        disabled ? "text-gray-400" : "text-white"
+      )}
     >
       {title}
     </Link>

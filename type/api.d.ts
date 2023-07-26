@@ -774,9 +774,9 @@ export interface paths {
     put: {
       requestBody?: {
         content: {
-          "application/json": (components["schemas"]["Volo.Abp.Account.UpdateExternalProviderDto"])[];
-          "text/json": (components["schemas"]["Volo.Abp.Account.UpdateExternalProviderDto"])[];
-          "application/*+json": (components["schemas"]["Volo.Abp.Account.UpdateExternalProviderDto"])[];
+          "application/json": components["schemas"]["Volo.Abp.Account.UpdateExternalProviderDto"][];
+          "text/json": components["schemas"]["Volo.Abp.Account.UpdateExternalProviderDto"][];
+          "application/*+json": components["schemas"]["Volo.Abp.Account.UpdateExternalProviderDto"][];
         };
       };
       responses: {
@@ -4086,9 +4086,9 @@ export interface paths {
         /** @description Success */
         200: {
           content: {
-            "text/plain": (components["schemas"]["Volo.Abp.AuditLogging.EntityChangeWithUsernameDto"])[];
-            "application/json": (components["schemas"]["Volo.Abp.AuditLogging.EntityChangeWithUsernameDto"])[];
-            "text/json": (components["schemas"]["Volo.Abp.AuditLogging.EntityChangeWithUsernameDto"])[];
+            "text/plain": components["schemas"]["Volo.Abp.AuditLogging.EntityChangeWithUsernameDto"][];
+            "application/json": components["schemas"]["Volo.Abp.AuditLogging.EntityChangeWithUsernameDto"][];
+            "text/json": components["schemas"]["Volo.Abp.AuditLogging.EntityChangeWithUsernameDto"][];
           };
         };
         /** @description Bad Request */
@@ -4690,9 +4690,9 @@ export interface paths {
         /** @description Success */
         200: {
           content: {
-            "text/plain": (components["schemas"]["Volo.CmsKit.Blogs.BlogFeatureDto"])[];
-            "application/json": (components["schemas"]["Volo.CmsKit.Blogs.BlogFeatureDto"])[];
-            "text/json": (components["schemas"]["Volo.CmsKit.Blogs.BlogFeatureDto"])[];
+            "text/plain": components["schemas"]["Volo.CmsKit.Blogs.BlogFeatureDto"][];
+            "application/json": components["schemas"]["Volo.CmsKit.Blogs.BlogFeatureDto"][];
+            "text/json": components["schemas"]["Volo.CmsKit.Blogs.BlogFeatureDto"][];
           };
         };
         /** @description Bad Request */
@@ -8251,9 +8251,9 @@ export interface paths {
         /** @description Success */
         200: {
           content: {
-            "text/plain": (components["schemas"]["Volo.Payment.Plans.PlanDto"])[];
-            "application/json": (components["schemas"]["Volo.Payment.Plans.PlanDto"])[];
-            "text/json": (components["schemas"]["Volo.Payment.Plans.PlanDto"])[];
+            "text/plain": components["schemas"]["Volo.Payment.Plans.PlanDto"][];
+            "application/json": components["schemas"]["Volo.Payment.Plans.PlanDto"][];
+            "text/json": components["schemas"]["Volo.Payment.Plans.PlanDto"][];
           };
         };
         /** @description Bad Request */
@@ -8561,25 +8561,24 @@ export interface paths {
       };
     };
   };
-  "/api/product-service/entity-schedules/entity-schedules-by-entity-id/{entityId}": {
+  "/api/product-service/entity-schedules/entity-schedules-by-entity-id": {
     get: {
       parameters: {
         query?: {
+          productGroupId?: string;
           startTime?: string;
           endTime?: string;
           type?: components["schemas"]["Tourmap.ProductService.EntitySchedules.EntityScheduleType"];
-        };
-        path: {
-          entityId: string;
+          entityId?: string;
         };
       };
       responses: {
         /** @description Success */
         200: {
           content: {
-            "text/plain": (components["schemas"]["Tourmap.ProductService.EntitySchedules.EntityScheduleDto"])[];
-            "application/json": (components["schemas"]["Tourmap.ProductService.EntitySchedules.EntityScheduleDto"])[];
-            "text/json": (components["schemas"]["Tourmap.ProductService.EntitySchedules.EntityScheduleDto"])[];
+            "text/plain": components["schemas"]["Tourmap.ProductService.EntitySchedules.EntityScheduleDto+CalculateSchedulesResult"][];
+            "application/json": components["schemas"]["Tourmap.ProductService.EntitySchedules.EntityScheduleDto+CalculateSchedulesResult"][];
+            "text/json": components["schemas"]["Tourmap.ProductService.EntitySchedules.EntityScheduleDto+CalculateSchedulesResult"][];
           };
         };
         /** @description Bad Request */
@@ -8633,24 +8632,23 @@ export interface paths {
       };
     };
   };
-  "/api/product-service/entity-schedules/entity-schedules-of-month-by-entity-id/{entityId}": {
+  "/api/product-service/entity-schedules/entity-schedules-of-month-by-entity-id": {
     get: {
       parameters: {
         query?: {
+          productGroupId?: string;
           month?: string;
           type?: components["schemas"]["Tourmap.ProductService.EntitySchedules.EntityScheduleType"];
-        };
-        path: {
-          entityId: string;
+          entityId?: string;
         };
       };
       responses: {
         /** @description Success */
         200: {
           content: {
-            "text/plain": (components["schemas"]["Tourmap.ProductService.EntitySchedules.EntityScheduleDto"])[];
-            "application/json": (components["schemas"]["Tourmap.ProductService.EntitySchedules.EntityScheduleDto"])[];
-            "text/json": (components["schemas"]["Tourmap.ProductService.EntitySchedules.EntityScheduleDto"])[];
+            "text/plain": components["schemas"]["Tourmap.ProductService.EntitySchedules.EntityScheduleDto+CalculateSchedulesResult"][];
+            "application/json": components["schemas"]["Tourmap.ProductService.EntitySchedules.EntityScheduleDto+CalculateSchedulesResult"][];
+            "text/json": components["schemas"]["Tourmap.ProductService.EntitySchedules.EntityScheduleDto+CalculateSchedulesResult"][];
           };
         };
         /** @description Bad Request */
@@ -10382,9 +10380,9 @@ export interface paths {
         /** @description Success */
         200: {
           content: {
-            "text/plain": (components["schemas"]["Volo.Abp.LanguageManagement.Dto.LanguageResourceDto"])[];
-            "application/json": (components["schemas"]["Volo.Abp.LanguageManagement.Dto.LanguageResourceDto"])[];
-            "text/json": (components["schemas"]["Volo.Abp.LanguageManagement.Dto.LanguageResourceDto"])[];
+            "text/plain": components["schemas"]["Volo.Abp.LanguageManagement.Dto.LanguageResourceDto"][];
+            "application/json": components["schemas"]["Volo.Abp.LanguageManagement.Dto.LanguageResourceDto"][];
+            "text/json": components["schemas"]["Volo.Abp.LanguageManagement.Dto.LanguageResourceDto"][];
           };
         };
         /** @description Bad Request */
@@ -10444,9 +10442,9 @@ export interface paths {
         /** @description Success */
         200: {
           content: {
-            "text/plain": (components["schemas"]["Volo.Abp.LanguageManagement.Dto.CultureInfoDto"])[];
-            "application/json": (components["schemas"]["Volo.Abp.LanguageManagement.Dto.CultureInfoDto"])[];
-            "text/json": (components["schemas"]["Volo.Abp.LanguageManagement.Dto.CultureInfoDto"])[];
+            "text/plain": components["schemas"]["Volo.Abp.LanguageManagement.Dto.CultureInfoDto"][];
+            "application/json": components["schemas"]["Volo.Abp.LanguageManagement.Dto.CultureInfoDto"][];
+            "text/json": components["schemas"]["Volo.Abp.LanguageManagement.Dto.CultureInfoDto"][];
           };
         };
         /** @description Bad Request */
@@ -10506,9 +10504,9 @@ export interface paths {
         /** @description Success */
         200: {
           content: {
-            "text/plain": (string)[];
-            "application/json": (string)[];
-            "text/json": (string)[];
+            "text/plain": string[];
+            "application/json": string[];
+            "text/json": string[];
           };
         };
         /** @description Bad Request */
@@ -11512,9 +11510,9 @@ export interface paths {
         /** @description Success */
         200: {
           content: {
-            "text/plain": (components["schemas"]["Volo.CmsKit.Menus.MenuItemDto"])[];
-            "application/json": (components["schemas"]["Volo.CmsKit.Menus.MenuItemDto"])[];
-            "text/json": (components["schemas"]["Volo.CmsKit.Menus.MenuItemDto"])[];
+            "text/plain": components["schemas"]["Volo.CmsKit.Menus.MenuItemDto"][];
+            "application/json": components["schemas"]["Volo.CmsKit.Menus.MenuItemDto"][];
+            "text/json": components["schemas"]["Volo.CmsKit.Menus.MenuItemDto"][];
           };
         };
         /** @description Bad Request */
@@ -14479,9 +14477,9 @@ export interface paths {
         /** @description Success */
         200: {
           content: {
-            "text/plain": (components["schemas"]["Tourmap.ProductService.ProductGroups.ProductGroupDto+WithNavigationProperties"])[];
-            "application/json": (components["schemas"]["Tourmap.ProductService.ProductGroups.ProductGroupDto+WithNavigationProperties"])[];
-            "text/json": (components["schemas"]["Tourmap.ProductService.ProductGroups.ProductGroupDto+WithNavigationProperties"])[];
+            "text/plain": components["schemas"]["Tourmap.ProductService.ProductGroups.ProductGroupDto+WithNavigationProperties"][];
+            "application/json": components["schemas"]["Tourmap.ProductService.ProductGroups.ProductGroupDto+WithNavigationProperties"][];
+            "text/json": components["schemas"]["Tourmap.ProductService.ProductGroups.ProductGroupDto+WithNavigationProperties"][];
           };
         };
         /** @description Bad Request */
@@ -14605,6 +14603,73 @@ export interface paths {
       };
     };
   };
+  "/api/product-service/product-group/first-can-booking-date/{productGroupId}": {
+    get: {
+      parameters: {
+        path: {
+          productGroupId: string;
+        };
+      };
+      responses: {
+        /** @description Success */
+        200: {
+          content: {
+            "text/plain": components["schemas"]["Tourmap.ProductService.ProductGroups.ProductGroupDto+FirstCanBookingDate"];
+            "application/json": components["schemas"]["Tourmap.ProductService.ProductGroups.ProductGroupDto+FirstCanBookingDate"];
+            "text/json": components["schemas"]["Tourmap.ProductService.ProductGroups.ProductGroupDto+FirstCanBookingDate"];
+          };
+        };
+        /** @description Bad Request */
+        400: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Unauthorized */
+        401: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Forbidden */
+        403: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Not Found */
+        404: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Server Error */
+        500: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Server Error */
+        501: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+      };
+    };
+  };
   "/api/product-service/product-group/product-group-find-by-name": {
     get: {
       parameters: {
@@ -14672,11 +14737,12 @@ export interface paths {
       };
     };
   };
-  "/api/product-service/product-price/for-primary-product": {
+  "/api/product-service/product-price/for-product-price": {
     get: {
       parameters: {
         query?: {
           ProductId?: string;
+          PeriodScchemeId?: string;
           Sorting?: string;
           SkipCount?: number;
           MaxResultCount?: number;
@@ -14686,9 +14752,9 @@ export interface paths {
         /** @description Success */
         200: {
           content: {
-            "text/plain": (components["schemas"]["Tourmap.ProductService.ProductPrices.ProductPriceDto+WithNavigationProperties"])[];
-            "application/json": (components["schemas"]["Tourmap.ProductService.ProductPrices.ProductPriceDto+WithNavigationProperties"])[];
-            "text/json": (components["schemas"]["Tourmap.ProductService.ProductPrices.ProductPriceDto+WithNavigationProperties"])[];
+            "text/plain": components["schemas"]["Tourmap.ProductService.ProductPrices.ProductPriceDto+WithNavigationProperties"][];
+            "application/json": components["schemas"]["Tourmap.ProductService.ProductPrices.ProductPriceDto+WithNavigationProperties"][];
+            "text/json": components["schemas"]["Tourmap.ProductService.ProductPrices.ProductPriceDto+WithNavigationProperties"][];
           };
         };
         /** @description Bad Request */
@@ -14746,9 +14812,9 @@ export interface paths {
     post: {
       requestBody?: {
         content: {
-          "application/json": components["schemas"]["Tourmap.ProductService.ProductPrices.ProductPriceDto+Create"];
-          "text/json": components["schemas"]["Tourmap.ProductService.ProductPrices.ProductPriceDto+Create"];
-          "application/*+json": components["schemas"]["Tourmap.ProductService.ProductPrices.ProductPriceDto+Create"];
+          "application/json": components["schemas"]["Tourmap.ProductService.ProductPrices.ProductPriceDto+CreateWithPeriodPrice"];
+          "text/json": components["schemas"]["Tourmap.ProductService.ProductPrices.ProductPriceDto+CreateWithPeriodPrice"];
+          "application/*+json": components["schemas"]["Tourmap.ProductService.ProductPrices.ProductPriceDto+CreateWithPeriodPrice"];
         };
       };
       responses: {
@@ -14823,6 +14889,67 @@ export interface paths {
       };
       responses: {
         /** @description Success */
+        200: never;
+        /** @description Bad Request */
+        400: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Unauthorized */
+        401: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Forbidden */
+        403: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Not Found */
+        404: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Server Error */
+        500: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Server Error */
+        501: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+      };
+    };
+  };
+  "/api/product-service/product-price/{id}": {
+    get: {
+      parameters: {
+        path: {
+          id: string;
+        };
+      };
+      responses: {
+        /** @description Success */
         200: {
           content: {
             "text/plain": components["schemas"]["Tourmap.ProductService.ProductPrices.ProductPriceDto+WithNavigationProperties"];
@@ -14880,8 +15007,6 @@ export interface paths {
         };
       };
     };
-  };
-  "/api/product-service/product-price/{id}": {
     delete: {
       parameters: {
         path: {
@@ -14942,12 +15067,274 @@ export interface paths {
       };
     };
   };
+  "/api/product-service/product-price": {
+    post: {
+      requestBody?: {
+        content: {
+          "application/json": components["schemas"]["Tourmap.ProductService.ProductPrices.ProductPriceDto+Create"];
+          "text/json": components["schemas"]["Tourmap.ProductService.ProductPrices.ProductPriceDto+Create"];
+          "application/*+json": components["schemas"]["Tourmap.ProductService.ProductPrices.ProductPriceDto+Create"];
+        };
+      };
+      responses: {
+        /** @description Success */
+        200: {
+          content: {
+            "text/plain": components["schemas"]["Tourmap.ProductService.ProductPrices.ProductPriceDto"];
+            "application/json": components["schemas"]["Tourmap.ProductService.ProductPrices.ProductPriceDto"];
+            "text/json": components["schemas"]["Tourmap.ProductService.ProductPrices.ProductPriceDto"];
+          };
+        };
+        /** @description Bad Request */
+        400: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Unauthorized */
+        401: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Forbidden */
+        403: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Not Found */
+        404: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Server Error */
+        500: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Server Error */
+        501: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+      };
+    };
+  };
+  "/api/product-service/product-price/period": {
+    post: {
+      requestBody?: {
+        content: {
+          "application/json": components["schemas"]["Tourmap.ProductService.ProductPeriodPrices.ProductPeriodPriceDto+Create"];
+          "text/json": components["schemas"]["Tourmap.ProductService.ProductPeriodPrices.ProductPeriodPriceDto+Create"];
+          "application/*+json": components["schemas"]["Tourmap.ProductService.ProductPeriodPrices.ProductPeriodPriceDto+Create"];
+        };
+      };
+      responses: {
+        /** @description Success */
+        200: {
+          content: {
+            "text/plain": components["schemas"]["Tourmap.ProductService.ProductPeriodPrices.ProductPeriodPriceDto"];
+            "application/json": components["schemas"]["Tourmap.ProductService.ProductPeriodPrices.ProductPeriodPriceDto"];
+            "text/json": components["schemas"]["Tourmap.ProductService.ProductPeriodPrices.ProductPeriodPriceDto"];
+          };
+        };
+        /** @description Bad Request */
+        400: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Unauthorized */
+        401: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Forbidden */
+        403: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Not Found */
+        404: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Server Error */
+        500: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Server Error */
+        501: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+      };
+    };
+  };
+  "/api/product-service/product-price/period/{productPeriodPriceId}": {
+    put: {
+      parameters: {
+        query?: {
+          price?: number;
+        };
+        path: {
+          productPeriodPriceId: string;
+        };
+      };
+      responses: {
+        /** @description Success */
+        200: never;
+        /** @description Bad Request */
+        400: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Unauthorized */
+        401: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Forbidden */
+        403: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Not Found */
+        404: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Server Error */
+        500: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Server Error */
+        501: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+      };
+    };
+    delete: {
+      parameters: {
+        path: {
+          productPeriodPriceId: string;
+        };
+      };
+      responses: {
+        /** @description Success */
+        200: never;
+        /** @description Bad Request */
+        400: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Unauthorized */
+        401: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Forbidden */
+        403: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Not Found */
+        404: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Server Error */
+        500: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Server Error */
+        501: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+      };
+    };
+  };
   "/api/product-service/products/product-for-browse": {
     get: {
       parameters: {
         query?: {
-          campingIds?: (string)[];
-          projectIds?: (string)[];
+          campingIds?: string[];
+          projectIds?: string[];
+          filter?: string;
         };
       };
       responses: {
@@ -15021,7 +15408,13 @@ export interface paths {
       };
       responses: {
         /** @description Success */
-        200: never;
+        200: {
+          content: {
+            "text/plain": components["schemas"]["Tourmap.ProductService.Products.ProductDto"];
+            "application/json": components["schemas"]["Tourmap.ProductService.Products.ProductDto"];
+            "text/json": components["schemas"]["Tourmap.ProductService.Products.ProductDto"];
+          };
+        };
         /** @description Bad Request */
         400: {
           content: {
@@ -15202,6 +15595,74 @@ export interface paths {
       };
     };
   };
+  "/api/product-service/products/check-camping-and-project-can-create-product": {
+    post: {
+      parameters: {
+        query?: {
+          campingId?: string;
+          projectId?: string;
+        };
+      };
+      responses: {
+        /** @description Success */
+        200: {
+          content: {
+            "text/plain": components["schemas"]["Tourmap.ProductService.Products.ProductDto+CheckCanCreateResult"];
+            "application/json": components["schemas"]["Tourmap.ProductService.Products.ProductDto+CheckCanCreateResult"];
+            "text/json": components["schemas"]["Tourmap.ProductService.Products.ProductDto+CheckCanCreateResult"];
+          };
+        };
+        /** @description Bad Request */
+        400: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Unauthorized */
+        401: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Forbidden */
+        403: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Not Found */
+        404: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Server Error */
+        500: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Server Error */
+        501: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+      };
+    };
+  };
   "/api/product-service/products/camping-product-list": {
     get: {
       parameters: {
@@ -15216,9 +15677,9 @@ export interface paths {
         /** @description Success */
         200: {
           content: {
-            "text/plain": (components["schemas"]["Tourmap.ProductService.Products.CampingProductViewDto+CampingWithDetailDto"])[];
-            "application/json": (components["schemas"]["Tourmap.ProductService.Products.CampingProductViewDto+CampingWithDetailDto"])[];
-            "text/json": (components["schemas"]["Tourmap.ProductService.Products.CampingProductViewDto+CampingWithDetailDto"])[];
+            "text/plain": components["schemas"]["Tourmap.ProductService.Products.CampingProductViewDto+CampingWithDetailDto"][];
+            "application/json": components["schemas"]["Tourmap.ProductService.Products.CampingProductViewDto+CampingWithDetailDto"][];
+            "text/json": components["schemas"]["Tourmap.ProductService.Products.CampingProductViewDto+CampingWithDetailDto"][];
           };
         };
         /** @description Bad Request */
@@ -15348,9 +15809,9 @@ export interface paths {
         /** @description Success */
         200: {
           content: {
-            "text/plain": (components["schemas"]["Tourmap.Camping.CampingAreas.CampingAreaDto"])[];
-            "application/json": (components["schemas"]["Tourmap.Camping.CampingAreas.CampingAreaDto"])[];
-            "text/json": (components["schemas"]["Tourmap.Camping.CampingAreas.CampingAreaDto"])[];
+            "text/plain": components["schemas"]["Tourmap.Camping.CampingAreas.CampingAreaDto"][];
+            "application/json": components["schemas"]["Tourmap.Camping.CampingAreas.CampingAreaDto"][];
+            "text/json": components["schemas"]["Tourmap.Camping.CampingAreas.CampingAreaDto"][];
           };
         };
         /** @description Bad Request */
@@ -15600,11 +16061,11 @@ export interface paths {
       };
     };
     post: {
-      parameters: {
-        query?: {
-          productGroupId?: string;
-          name?: string;
-          defaultPeriodUsable?: components["schemas"]["EasyAbp.BookingService.AssetSchedules.PeriodUsable"];
+      requestBody?: {
+        content: {
+          "application/json": components["schemas"]["Tourmap.ProductService.Projects.ProjectDto+Create"];
+          "text/json": components["schemas"]["Tourmap.ProductService.Projects.ProjectDto+Create"];
+          "application/*+json": components["schemas"]["Tourmap.ProductService.Projects.ProjectDto+Create"];
         };
       };
       responses: {
@@ -15735,12 +16196,15 @@ export interface paths {
     };
     put: {
       parameters: {
-        query?: {
-          name?: string;
-          defaultPeriodUsable?: components["schemas"]["EasyAbp.BookingService.AssetSchedules.PeriodUsable"];
-        };
         path: {
           id: string;
+        };
+      };
+      requestBody?: {
+        content: {
+          "application/json": components["schemas"]["Tourmap.ProductService.Projects.ProjectDto+Update"];
+          "text/json": components["schemas"]["Tourmap.ProductService.Projects.ProjectDto+Update"];
+          "application/*+json": components["schemas"]["Tourmap.ProductService.Projects.ProjectDto+Update"];
         };
       };
       responses: {
@@ -15874,9 +16338,9 @@ export interface paths {
         /** @description Success */
         200: {
           content: {
-            "text/plain": (components["schemas"]["Volo.CmsKit.Public.Ratings.RatingWithStarCountDto"])[];
-            "application/json": (components["schemas"]["Volo.CmsKit.Public.Ratings.RatingWithStarCountDto"])[];
-            "text/json": (components["schemas"]["Volo.CmsKit.Public.Ratings.RatingWithStarCountDto"])[];
+            "text/plain": components["schemas"]["Volo.CmsKit.Public.Ratings.RatingWithStarCountDto"][];
+            "application/json": components["schemas"]["Volo.CmsKit.Public.Ratings.RatingWithStarCountDto"][];
+            "text/json": components["schemas"]["Volo.CmsKit.Public.Ratings.RatingWithStarCountDto"][];
           };
         };
         /** @description Bad Request */
@@ -16666,9 +17130,9 @@ export interface paths {
         /** @description Success */
         200: {
           content: {
-            "text/plain": (components["schemas"]["Volo.Abp.Identity.IdentityRoleClaimDto"])[];
-            "application/json": (components["schemas"]["Volo.Abp.Identity.IdentityRoleClaimDto"])[];
-            "text/json": (components["schemas"]["Volo.Abp.Identity.IdentityRoleClaimDto"])[];
+            "text/plain": components["schemas"]["Volo.Abp.Identity.IdentityRoleClaimDto"][];
+            "application/json": components["schemas"]["Volo.Abp.Identity.IdentityRoleClaimDto"][];
+            "text/json": components["schemas"]["Volo.Abp.Identity.IdentityRoleClaimDto"][];
           };
         };
         /** @description Bad Request */
@@ -16729,9 +17193,9 @@ export interface paths {
       };
       requestBody?: {
         content: {
-          "application/json": (components["schemas"]["Volo.Abp.Identity.IdentityRoleClaimDto"])[];
-          "text/json": (components["schemas"]["Volo.Abp.Identity.IdentityRoleClaimDto"])[];
-          "application/*+json": (components["schemas"]["Volo.Abp.Identity.IdentityRoleClaimDto"])[];
+          "application/json": components["schemas"]["Volo.Abp.Identity.IdentityRoleClaimDto"][];
+          "text/json": components["schemas"]["Volo.Abp.Identity.IdentityRoleClaimDto"][];
+          "application/*+json": components["schemas"]["Volo.Abp.Identity.IdentityRoleClaimDto"][];
         };
       };
       responses: {
@@ -16794,9 +17258,9 @@ export interface paths {
         /** @description Success */
         200: {
           content: {
-            "text/plain": (components["schemas"]["Volo.Abp.Identity.ClaimTypeDto"])[];
-            "application/json": (components["schemas"]["Volo.Abp.Identity.ClaimTypeDto"])[];
-            "text/json": (components["schemas"]["Volo.Abp.Identity.ClaimTypeDto"])[];
+            "text/plain": components["schemas"]["Volo.Abp.Identity.ClaimTypeDto"][];
+            "application/json": components["schemas"]["Volo.Abp.Identity.ClaimTypeDto"][];
+            "text/json": components["schemas"]["Volo.Abp.Identity.ClaimTypeDto"][];
           };
         };
         /** @description Bad Request */
@@ -17191,9 +17655,9 @@ export interface paths {
         /** @description Success */
         200: {
           content: {
-            "text/plain": (components["schemas"]["Volo.Abp.OpenIddict.Scopes.Dtos.ScopeDto"])[];
-            "application/json": (components["schemas"]["Volo.Abp.OpenIddict.Scopes.Dtos.ScopeDto"])[];
-            "text/json": (components["schemas"]["Volo.Abp.OpenIddict.Scopes.Dtos.ScopeDto"])[];
+            "text/plain": components["schemas"]["Volo.Abp.OpenIddict.Scopes.Dtos.ScopeDto"][];
+            "application/json": components["schemas"]["Volo.Abp.OpenIddict.Scopes.Dtos.ScopeDto"][];
+            "text/json": components["schemas"]["Volo.Abp.OpenIddict.Scopes.Dtos.ScopeDto"][];
           };
         };
         /** @description Bad Request */
@@ -18440,9 +18904,9 @@ export interface paths {
         /** @description Success */
         200: {
           content: {
-            "text/plain": (components["schemas"]["Volo.CmsKit.Admin.Tags.TagDefinitionDto"])[];
-            "application/json": (components["schemas"]["Volo.CmsKit.Admin.Tags.TagDefinitionDto"])[];
-            "text/json": (components["schemas"]["Volo.CmsKit.Admin.Tags.TagDefinitionDto"])[];
+            "text/plain": components["schemas"]["Volo.CmsKit.Admin.Tags.TagDefinitionDto"][];
+            "application/json": components["schemas"]["Volo.CmsKit.Admin.Tags.TagDefinitionDto"][];
+            "text/json": components["schemas"]["Volo.CmsKit.Admin.Tags.TagDefinitionDto"][];
           };
         };
         /** @description Bad Request */
@@ -18508,9 +18972,9 @@ export interface paths {
         /** @description Success */
         200: {
           content: {
-            "text/plain": (components["schemas"]["Volo.CmsKit.Tags.TagDto"])[];
-            "application/json": (components["schemas"]["Volo.CmsKit.Tags.TagDto"])[];
-            "text/json": (components["schemas"]["Volo.CmsKit.Tags.TagDto"])[];
+            "text/plain": components["schemas"]["Volo.CmsKit.Tags.TagDto"][];
+            "application/json": components["schemas"]["Volo.CmsKit.Tags.TagDto"][];
+            "text/json": components["schemas"]["Volo.CmsKit.Tags.TagDto"][];
           };
         };
         /** @description Bad Request */
@@ -19166,9 +19630,9 @@ export interface paths {
         /** @description Success */
         200: {
           content: {
-            "text/plain": (components["schemas"]["Volo.Saas.Host.Dtos.EditionLookupDto"])[];
-            "application/json": (components["schemas"]["Volo.Saas.Host.Dtos.EditionLookupDto"])[];
-            "text/json": (components["schemas"]["Volo.Saas.Host.Dtos.EditionLookupDto"])[];
+            "text/plain": components["schemas"]["Volo.Saas.Host.Dtos.EditionLookupDto"][];
+            "application/json": components["schemas"]["Volo.Saas.Host.Dtos.EditionLookupDto"][];
+            "text/json": components["schemas"]["Volo.Saas.Host.Dtos.EditionLookupDto"][];
           };
         };
         /** @description Bad Request */
@@ -20308,9 +20772,9 @@ export interface paths {
         /** @description Success */
         200: {
           content: {
-            "text/plain": (components["schemas"]["Volo.Abp.Identity.ClaimTypeDto"])[];
-            "application/json": (components["schemas"]["Volo.Abp.Identity.ClaimTypeDto"])[];
-            "text/json": (components["schemas"]["Volo.Abp.Identity.ClaimTypeDto"])[];
+            "text/plain": components["schemas"]["Volo.Abp.Identity.ClaimTypeDto"][];
+            "application/json": components["schemas"]["Volo.Abp.Identity.ClaimTypeDto"][];
+            "text/json": components["schemas"]["Volo.Abp.Identity.ClaimTypeDto"][];
           };
         };
         /** @description Bad Request */
@@ -20375,9 +20839,9 @@ export interface paths {
         /** @description Success */
         200: {
           content: {
-            "text/plain": (components["schemas"]["Volo.Abp.Identity.IdentityUserClaimDto"])[];
-            "application/json": (components["schemas"]["Volo.Abp.Identity.IdentityUserClaimDto"])[];
-            "text/json": (components["schemas"]["Volo.Abp.Identity.IdentityUserClaimDto"])[];
+            "text/plain": components["schemas"]["Volo.Abp.Identity.IdentityUserClaimDto"][];
+            "application/json": components["schemas"]["Volo.Abp.Identity.IdentityUserClaimDto"][];
+            "text/json": components["schemas"]["Volo.Abp.Identity.IdentityUserClaimDto"][];
           };
         };
         /** @description Bad Request */
@@ -20438,9 +20902,9 @@ export interface paths {
       };
       requestBody?: {
         content: {
-          "application/json": (components["schemas"]["Volo.Abp.Identity.IdentityUserClaimDto"])[];
-          "text/json": (components["schemas"]["Volo.Abp.Identity.IdentityUserClaimDto"])[];
-          "application/*+json": (components["schemas"]["Volo.Abp.Identity.IdentityUserClaimDto"])[];
+          "application/json": components["schemas"]["Volo.Abp.Identity.IdentityUserClaimDto"][];
+          "text/json": components["schemas"]["Volo.Abp.Identity.IdentityUserClaimDto"][];
+          "application/*+json": components["schemas"]["Volo.Abp.Identity.IdentityUserClaimDto"][];
         };
       };
       responses: {
@@ -20508,9 +20972,9 @@ export interface paths {
         /** @description Success */
         200: {
           content: {
-            "text/plain": (components["schemas"]["Volo.Abp.Identity.OrganizationUnitDto"])[];
-            "application/json": (components["schemas"]["Volo.Abp.Identity.OrganizationUnitDto"])[];
-            "text/json": (components["schemas"]["Volo.Abp.Identity.OrganizationUnitDto"])[];
+            "text/plain": components["schemas"]["Volo.Abp.Identity.OrganizationUnitDto"][];
+            "application/json": components["schemas"]["Volo.Abp.Identity.OrganizationUnitDto"][];
+            "text/json": components["schemas"]["Volo.Abp.Identity.OrganizationUnitDto"][];
           };
         };
         /** @description Bad Request */
@@ -21024,9 +21488,9 @@ export interface paths {
         /** @description Success */
         200: {
           content: {
-            "text/plain": (components["schemas"]["Volo.Abp.Identity.IdentityRoleLookupDto"])[];
-            "application/json": (components["schemas"]["Volo.Abp.Identity.IdentityRoleLookupDto"])[];
-            "text/json": (components["schemas"]["Volo.Abp.Identity.IdentityRoleLookupDto"])[];
+            "text/plain": components["schemas"]["Volo.Abp.Identity.IdentityRoleLookupDto"][];
+            "application/json": components["schemas"]["Volo.Abp.Identity.IdentityRoleLookupDto"][];
+            "text/json": components["schemas"]["Volo.Abp.Identity.IdentityRoleLookupDto"][];
           };
         };
         /** @description Bad Request */
@@ -21086,9 +21550,9 @@ export interface paths {
         /** @description Success */
         200: {
           content: {
-            "text/plain": (components["schemas"]["Volo.Abp.Identity.OrganizationUnitLookupDto"])[];
-            "application/json": (components["schemas"]["Volo.Abp.Identity.OrganizationUnitLookupDto"])[];
-            "text/json": (components["schemas"]["Volo.Abp.Identity.OrganizationUnitLookupDto"])[];
+            "text/plain": components["schemas"]["Volo.Abp.Identity.OrganizationUnitLookupDto"][];
+            "application/json": components["schemas"]["Volo.Abp.Identity.OrganizationUnitLookupDto"][];
+            "text/json": components["schemas"]["Volo.Abp.Identity.OrganizationUnitLookupDto"][];
           };
         };
         /** @description Bad Request */
@@ -21148,9 +21612,9 @@ export interface paths {
         /** @description Success */
         200: {
           content: {
-            "text/plain": (components["schemas"]["Volo.Abp.Identity.ExternalLoginProviderDto"])[];
-            "application/json": (components["schemas"]["Volo.Abp.Identity.ExternalLoginProviderDto"])[];
-            "text/json": (components["schemas"]["Volo.Abp.Identity.ExternalLoginProviderDto"])[];
+            "text/plain": components["schemas"]["Volo.Abp.Identity.ExternalLoginProviderDto"][];
+            "application/json": components["schemas"]["Volo.Abp.Identity.ExternalLoginProviderDto"][];
+            "text/json": components["schemas"]["Volo.Abp.Identity.ExternalLoginProviderDto"][];
           };
         };
         /** @description Bad Request */
@@ -21583,7 +22047,7 @@ export interface components {
       level?: number;
       /** Format: uuid */
       parentId?: string | null;
-      children?: (components["schemas"]["EasyAbp.BookingService.AssetCategories.Dtos.AssetCategoryDto"])[] | null;
+      children?: components["schemas"]["EasyAbp.BookingService.AssetCategories.Dtos.AssetCategoryDto"][] | null;
       displayName?: string | null;
     };
     "EasyAbp.BookingService.AssetCategories.Dtos.CreateAssetCategoryDto": {
@@ -21658,8 +22122,8 @@ export interface components {
       } | null;
       /** Format: uuid */
       occupierUserId?: string | null;
-      models?: (components["schemas"]["EasyAbp.BookingService.AssetOccupancyProviders.OccupyAssetInfoModel"])[] | null;
-      byCategoryModels?: (components["schemas"]["EasyAbp.BookingService.AssetOccupancyProviders.OccupyAssetByCategoryInfoModel"])[] | null;
+      models?: components["schemas"]["EasyAbp.BookingService.AssetOccupancyProviders.OccupyAssetInfoModel"][] | null;
+      byCategoryModels?: components["schemas"]["EasyAbp.BookingService.AssetOccupancyProviders.OccupyAssetByCategoryInfoModel"][] | null;
     };
     "EasyAbp.BookingService.AssetOccupancies.Dtos.CreateAssetOccupancyByCategoryIdDto": {
       extraProperties?: {
@@ -21702,7 +22166,7 @@ export interface components {
       targetDate: string;
     };
     "EasyAbp.BookingService.AssetOccupancies.Dtos.SearchBookingPeriodsResultDto": {
-      items?: (components["schemas"]["EasyAbp.BookingService.AssetOccupancies.Dtos.BookingPeriodDto"])[] | null;
+      items?: components["schemas"]["EasyAbp.BookingService.AssetOccupancies.Dtos.BookingPeriodDto"][] | null;
     };
     "EasyAbp.BookingService.AssetOccupancies.Dtos.SearchCategoryBookingPeriodsInputDto": {
       /** Format: uuid */
@@ -21824,7 +22288,7 @@ export interface components {
       timeInAdvance?: components["schemas"]["EasyAbp.BookingService.Dtos.TimeInAdvanceDto"];
     };
     /**
-     * Format: int32 
+     * Format: int32
      * @enum {integer}
      */
     "EasyAbp.BookingService.AssetSchedules.PeriodUsable": 0 | 1;
@@ -21892,7 +22356,7 @@ export interface components {
         [key: string]: unknown;
       } | null;
       name?: string | null;
-      periods?: (components["schemas"]["EasyAbp.BookingService.PeriodSchemes.Dtos.CreateUpdatePeriodDto"])[] | null;
+      periods?: components["schemas"]["EasyAbp.BookingService.PeriodSchemes.Dtos.CreateUpdatePeriodDto"][] | null;
     };
     "EasyAbp.BookingService.PeriodSchemes.Dtos.CreateUpdatePeriodDto": {
       extraProperties?: {
@@ -21928,7 +22392,7 @@ export interface components {
       deletionTime?: string | null;
       name?: string | null;
       isDefault?: boolean;
-      periods?: (components["schemas"]["EasyAbp.BookingService.PeriodSchemes.Dtos.PeriodDto"])[] | null;
+      periods?: components["schemas"]["EasyAbp.BookingService.PeriodSchemes.Dtos.PeriodDto"][] | null;
     };
     "EasyAbp.BookingService.PeriodSchemes.Dtos.UpdatePeriodSchemeDto": {
       extraProperties?: {
@@ -21937,7 +22401,7 @@ export interface components {
       name?: string | null;
     };
     /**
-     * Format: int32 
+     * Format: int32
      * @enum {integer}
      */
     "System.Net.HttpStatusCode": 100 | 101 | 102 | 103 | 200 | 201 | 202 | 203 | 204 | 205 | 206 | 207 | 208 | 226 | 300 | 301 | 302 | 303 | 304 | 305 | 306 | 307 | 308 | 400 | 401 | 402 | 403 | 404 | 405 | 406 | 407 | 408 | 409 | 410 | 411 | 412 | 413 | 414 | 415 | 416 | 417 | 421 | 422 | 423 | 424 | 426 | 428 | 429 | 431 | 451 | 500 | 501 | 502 | 503 | 504 | 505 | 506 | 507 | 508 | 510 | 511;
@@ -22171,7 +22635,7 @@ export interface components {
     "Tourmap.Camping.CampingAreas.CampingAreaDto+ForBrowse": {
       campingArea?: components["schemas"]["Tourmap.Camping.CampingAreas.CampingAreaDto"];
       coverImage?: components["schemas"]["Volo.Cmskit.MediaDescriptors.MediaDescriptorsDto+Attachment"];
-      campings?: (components["schemas"]["Tourmap.Camping.Campings.CampingDto+ForBrowse"])[] | null;
+      campings?: components["schemas"]["Tourmap.Camping.Campings.CampingDto+ForBrowse"][] | null;
     };
     "Tourmap.Camping.CampingAreas.CampingAreaDto+Update": {
       displayName?: string | null;
@@ -22209,8 +22673,8 @@ export interface components {
       addPeopleLimit?: number | null;
       /** Format: int32 */
       addPeoplePrice?: number | null;
-      /** Format: double */
-      handlingFeeRatio?: number;
+      defaultUsable?: components["schemas"]["EasyAbp.BookingService.AssetSchedules.PeriodUsable"];
+      description?: string | null;
       /** Format: int32 */
       index?: number;
     };
@@ -22224,15 +22688,15 @@ export interface components {
       addPeopleLimit?: number | null;
       /** Format: int32 */
       addPeoplePrice?: number | null;
-      /** Format: double */
-      handlingFeeRatio?: number;
+      defaultUsable?: components["schemas"]["EasyAbp.BookingService.AssetSchedules.PeriodUsable"];
+      description?: string | null;
       /** Format: int32 */
       index?: number;
     };
     "Tourmap.Camping.Campings.CampingDto+ForBrowse": {
       camping?: components["schemas"]["Tourmap.Camping.Campings.CampingDto"];
       asset?: components["schemas"]["EasyAbp.BookingService.Assets.Dtos.AssetDto"];
-      attachments?: (components["schemas"]["Volo.Cmskit.MediaDescriptors.MediaDescriptorsDto+Attachment"])[] | null;
+      attachments?: components["schemas"]["Volo.Cmskit.MediaDescriptors.MediaDescriptorsDto+Attachment"][] | null;
     };
     "Tourmap.Camping.Campings.CampingDto+Update": {
       /** Format: uuid */
@@ -22244,8 +22708,8 @@ export interface components {
       addPeopleLimit?: number | null;
       /** Format: int32 */
       addPeoplePrice?: number | null;
-      /** Format: double */
-      handlingFeeRatio?: number;
+      defaultUsable?: components["schemas"]["EasyAbp.BookingService.AssetSchedules.PeriodUsable"];
+      description?: string | null;
       /** Format: int32 */
       index?: number;
     };
@@ -22283,7 +22747,7 @@ export interface components {
       calendar?: ({
         [key: string]: components["schemas"]["Tourmap.ProductService.DailyPeriodSchemes.DailyPeriodSchemeDto+ForCalendar+Daily"] | undefined;
       }) | null;
-      periodSchemes?: (components["schemas"]["EasyAbp.BookingService.PeriodSchemes.Dtos.PeriodSchemeDto"])[] | null;
+      periodSchemes?: components["schemas"]["EasyAbp.BookingService.PeriodSchemes.Dtos.PeriodSchemeDto"][] | null;
     };
     "Tourmap.ProductService.DailyPeriodSchemes.DailyPeriodSchemeDto+ForCalendar+Daily": {
       dailyPeriodScheme?: components["schemas"]["Tourmap.ProductService.DailyPeriodSchemes.DailyPeriodSchemeDto"];
@@ -22320,6 +22784,13 @@ export interface components {
       entityId?: string;
       periodUsable?: components["schemas"]["EasyAbp.BookingService.AssetSchedules.PeriodUsable"];
     };
+    "Tourmap.ProductService.EntitySchedules.EntityScheduleDto+CalculateSchedulesResult": {
+      entitySchedule?: components["schemas"]["Tourmap.ProductService.EntitySchedules.EntityScheduleDto"];
+      canEdit?: boolean;
+      rejectSource?: string | null;
+      /** Format: date-time */
+      date?: string;
+    };
     "Tourmap.ProductService.EntitySchedules.EntityScheduleDto+Create": {
       /** Format: date-time */
       date?: string;
@@ -22328,7 +22799,7 @@ export interface components {
       periodUsable?: components["schemas"]["EasyAbp.BookingService.AssetSchedules.PeriodUsable"];
     };
     /**
-     * Format: int32 
+     * Format: int32
      * @enum {integer}
      */
     "Tourmap.ProductService.EntitySchedules.EntityScheduleType": 0 | 1 | 2 | 3;
@@ -22394,7 +22865,7 @@ export interface components {
       saturday?: string;
     };
     /**
-     * Format: int32 
+     * Format: int32
      * @enum {integer}
      */
     "Tourmap.ProductService.ProductGroups.AssetType": 0 | 1;
@@ -22419,11 +22890,16 @@ export interface components {
       assetType?: components["schemas"]["Tourmap.ProductService.ProductGroups.AssetType"];
       defaultPeriodUsable?: components["schemas"]["EasyAbp.BookingService.AssetSchedules.PeriodUsable"];
     };
+    "Tourmap.ProductService.ProductGroups.ProductGroupDto+FirstCanBookingDate": {
+      /** Format: date-time */
+      date?: string;
+      canBooking?: boolean;
+    };
     "Tourmap.ProductService.ProductGroups.ProductGroupDto+WithNavigationProperties": {
       productGroup?: components["schemas"]["Tourmap.ProductService.ProductGroups.ProductGroupDto"];
-      periodSchemes?: (components["schemas"]["EasyAbp.BookingService.PeriodSchemes.Dtos.PeriodSchemeDto"])[] | null;
-      assets?: (components["schemas"]["EasyAbp.BookingService.Assets.Dtos.AssetDto"])[] | null;
-      assetCategories?: (components["schemas"]["EasyAbp.BookingService.AssetCategories.Dtos.AssetCategoryDto"])[] | null;
+      periodSchemes?: components["schemas"]["EasyAbp.BookingService.PeriodSchemes.Dtos.PeriodSchemeDto"][] | null;
+      assets?: components["schemas"]["EasyAbp.BookingService.Assets.Dtos.AssetDto"][] | null;
+      assetCategories?: components["schemas"]["EasyAbp.BookingService.AssetCategories.Dtos.AssetCategoryDto"][] | null;
     };
     "Tourmap.ProductService.ProductPeriodPrices.ProductPeriodPriceDto": {
       /** Format: uuid */
@@ -22441,6 +22917,14 @@ export interface components {
       deleterId?: string | null;
       /** Format: date-time */
       deletionTime?: string | null;
+      /** Format: uuid */
+      productPriceId?: string;
+      /** Format: uuid */
+      periodId?: string;
+      /** Format: double */
+      price?: number;
+    };
+    "Tourmap.ProductService.ProductPeriodPrices.ProductPeriodPriceDto+Create": {
       /** Format: uuid */
       productPriceId?: string;
       /** Format: uuid */
@@ -22479,14 +22963,29 @@ export interface components {
       /** Format: double */
       defaultPrice?: number;
     };
+    "Tourmap.ProductService.ProductPrices.ProductPriceDto+CreateWithPeriodPrice": {
+      /** Format: uuid */
+      productId?: string;
+      /** Format: uuid */
+      periodSchemeId?: string;
+      /** Format: double */
+      defaultPrice?: number;
+      productPeriodPrice?: components["schemas"]["Tourmap.ProductService.ProductPrices.ProductPriceDto+CreateWithPeriodPrice+WithPeriodPrice"][] | null;
+    };
+    "Tourmap.ProductService.ProductPrices.ProductPriceDto+CreateWithPeriodPrice+WithPeriodPrice": {
+      /** Format: uuid */
+      periodId?: string;
+      /** Format: double */
+      price?: number;
+    };
     "Tourmap.ProductService.ProductPrices.ProductPriceDto+WithNavigationProperties": {
       productPrice?: components["schemas"]["Tourmap.ProductService.ProductPrices.ProductPriceDto"];
       product?: components["schemas"]["Tourmap.ProductService.Products.ProductDto"];
       periodScheme?: components["schemas"]["EasyAbp.BookingService.PeriodSchemes.Dtos.PeriodSchemeDto"];
-      productPeriodPrices?: (components["schemas"]["Tourmap.ProductService.ProductPeriodPrices.ProductPeriodPriceDto"])[] | null;
+      productPeriodPrices?: components["schemas"]["Tourmap.ProductService.ProductPeriodPrices.ProductPeriodPriceDto"][] | null;
     };
     "Tourmap.ProductService.Products.BookingCalendarDataDto": {
-      canBooking?: boolean;
+      canBooking?: components["schemas"]["Tourmap.ProductService.Products.BookingCalendarType"];
     };
     "Tourmap.ProductService.Products.BookingCalendarDto": {
       /** Format: date-time */
@@ -22495,6 +22994,11 @@ export interface components {
         [key: string]: components["schemas"]["Tourmap.ProductService.Products.BookingCalendarDataDto"] | undefined;
       }) | null;
     };
+    /**
+     * Format: int32
+     * @enum {integer}
+     */
+    "Tourmap.ProductService.Products.BookingCalendarType": 0 | 1 | 2;
     "Tourmap.ProductService.Products.CampingProductViewDto+AvailbleProjectDto": {
       project?: components["schemas"]["Tourmap.ProductService.Projects.ProjectDto"];
       product?: components["schemas"]["Tourmap.ProductService.Products.ProductDto"];
@@ -22503,18 +23007,18 @@ export interface components {
     };
     "Tourmap.ProductService.Products.CampingProductViewDto+CampingProductDetailBrowseDto": {
       camping?: components["schemas"]["Tourmap.Camping.Campings.CampingDto"];
-      campingImages?: (components["schemas"]["Tourmap.ProductService.Products.CampingProductViewDto+FileDetailDto"])[] | null;
+      campingImages?: components["schemas"]["Tourmap.ProductService.Products.CampingProductViewDto+FileDetailDto"][] | null;
       product?: components["schemas"]["Tourmap.ProductService.Products.ProductDto"];
       project?: components["schemas"]["Tourmap.ProductService.Projects.ProjectDto"];
       /** Format: double */
       price?: number;
     };
     "Tourmap.ProductService.Products.CampingProductViewDto+CampingProjectDetailDto": {
-      availbleProjects?: (components["schemas"]["Tourmap.ProductService.Products.CampingProductViewDto+AvailbleProjectDto"])[] | null;
+      availbleProjects?: components["schemas"]["Tourmap.ProductService.Products.CampingProductViewDto+AvailbleProjectDto"][] | null;
     };
     "Tourmap.ProductService.Products.CampingProductViewDto+CampingWithDetailDto": {
       camping?: components["schemas"]["Tourmap.Camping.Campings.CampingDto"];
-      campingImages?: (components["schemas"]["Tourmap.ProductService.Products.CampingProductViewDto+FileDetailDto"])[] | null;
+      campingImages?: components["schemas"]["Tourmap.ProductService.Products.CampingProductViewDto+FileDetailDto"][] | null;
       campingProjectDetails?: ({
         [key: string]: components["schemas"]["Tourmap.ProductService.Products.CampingProductViewDto+CampingProjectDetailDto"] | undefined;
       }) | null;
@@ -22553,6 +23057,9 @@ export interface components {
       displayName?: string | null;
       description?: string | null;
       defaultPeriodUsable?: components["schemas"]["EasyAbp.BookingService.AssetSchedules.PeriodUsable"];
+    };
+    "Tourmap.ProductService.Products.ProductDto+CheckCanCreateResult": {
+      canCreate?: boolean;
     };
     "Tourmap.ProductService.Products.ProductDto+ForBrowse": {
       product?: components["schemas"]["Tourmap.ProductService.Products.ProductDto"];
@@ -22594,6 +23101,25 @@ export interface components {
       defaultPeriodUsable?: components["schemas"]["EasyAbp.BookingService.AssetSchedules.PeriodUsable"];
       isDefault?: boolean;
       isDisable?: boolean;
+      description?: string | null;
+    };
+    "Tourmap.ProductService.Projects.ProjectDto+Create": {
+      /** Format: uuid */
+      productGroupId?: string;
+      name?: string | null;
+      defaultPeriodUsable?: components["schemas"]["EasyAbp.BookingService.AssetSchedules.PeriodUsable"];
+      isDefault?: boolean;
+      isDisable?: boolean;
+      description?: string | null;
+    };
+    "Tourmap.ProductService.Projects.ProjectDto+Update": {
+      /** Format: uuid */
+      productGroupId?: string;
+      name?: string | null;
+      defaultPeriodUsable?: components["schemas"]["EasyAbp.BookingService.AssetSchedules.PeriodUsable"];
+      isDefault?: boolean;
+      isDisable?: boolean;
+      description?: string | null;
     };
     "Tourmap.ProductService.ShoppingCarts.Dtos.AdditionItem": {
       amount?: components["schemas"]["Tourmap.ProductService.ShoppingCarts.Dtos.AmountData"];
@@ -22639,12 +23165,12 @@ export interface components {
       customerRemark?: string | null;
       /** Format: uuid */
       ownerId?: string;
-      shoppingCartItems?: (components["schemas"]["Tourmap.ProductService.ShoppingCarts.Dtos.ShoppingCartDisplayItem"])[] | null;
+      shoppingCartItems?: components["schemas"]["Tourmap.ProductService.ShoppingCarts.Dtos.ShoppingCartDisplayItem"][] | null;
       /** Format: int32 */
       totalPrice?: number;
     };
     "Tourmap.ProductService.ShoppingCarts.Dtos.ShoppingCartDisplayItem": {
-      additionItems?: (components["schemas"]["Tourmap.ProductService.ShoppingCarts.Dtos.AdditionItem"])[] | null;
+      additionItems?: components["schemas"]["Tourmap.ProductService.ShoppingCarts.Dtos.AdditionItem"][] | null;
       /** Format: date-time */
       date?: string;
       /** Format: int32 */
@@ -22656,7 +23182,7 @@ export interface components {
     "Tourmap.ProductService.ShoppingCarts.ShoppingCartItemDto+CreateOrUpdate": {
       /** Format: uuid */
       ownerId?: string;
-      createOrUpdateDetiails?: (components["schemas"]["Tourmap.ProductService.ShoppingCarts.ShoppingCartItemDto+CreateOrUpdateDetail"])[] | null;
+      createOrUpdateDetiails?: components["schemas"]["Tourmap.ProductService.ShoppingCarts.ShoppingCartItemDto+CreateOrUpdateDetail"][] | null;
     };
     "Tourmap.ProductService.ShoppingCarts.ShoppingCartItemDto+CreateOrUpdateDetail": {
       /** Format: uuid */
@@ -22669,7 +23195,7 @@ export interface components {
       date?: string;
     };
     "Volo.Abp.Account.AccountExternalProviderSettingsDto": {
-      settings?: (components["schemas"]["Volo.Abp.Account.ExternalProviders.ExternalProviderSettings"])[] | null;
+      settings?: components["schemas"]["Volo.Abp.Account.ExternalProviders.ExternalProviderSettings"][] | null;
     };
     "Volo.Abp.Account.AccountRecaptchaSettingsDto": {
       useCaptchaOnLogin?: boolean;
@@ -22694,8 +23220,8 @@ export interface components {
     "Volo.Abp.Account.ExternalProviders.ExternalProviderSettings": {
       name?: string | null;
       enabled?: boolean;
-      properties?: (components["schemas"]["Volo.Abp.Account.ExternalProviders.ExternalProviderSettingsProperty"])[] | null;
-      secretProperties?: (components["schemas"]["Volo.Abp.Account.ExternalProviders.ExternalProviderSettingsProperty"])[] | null;
+      properties?: components["schemas"]["Volo.Abp.Account.ExternalProviders.ExternalProviderSettingsProperty"][] | null;
+      secretProperties?: components["schemas"]["Volo.Abp.Account.ExternalProviders.ExternalProviderSettingsProperty"][] | null;
     };
     "Volo.Abp.Account.ExternalProviders.ExternalProviderSettingsProperty": {
       name?: string | null;
@@ -22704,190 +23230,190 @@ export interface components {
     "Volo.Abp.Account.UpdateExternalProviderDto": {
       name?: string | null;
       enabled?: boolean;
-      properties?: (components["schemas"]["Volo.Abp.Account.ExternalProviders.ExternalProviderSettingsProperty"])[] | null;
-      secretProperties?: (components["schemas"]["Volo.Abp.Account.ExternalProviders.ExternalProviderSettingsProperty"])[] | null;
+      properties?: components["schemas"]["Volo.Abp.Account.ExternalProviders.ExternalProviderSettingsProperty"][] | null;
+      secretProperties?: components["schemas"]["Volo.Abp.Account.ExternalProviders.ExternalProviderSettingsProperty"][] | null;
     };
     "Volo.Abp.Application.Dtos.ListResultDto`1[[EasyAbp.BookingService.PeriodSchemes.Dtos.PeriodDto, EasyAbp.BookingService.Common.Application.Contracts, Version=0.4.0.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["EasyAbp.BookingService.PeriodSchemes.Dtos.PeriodDto"])[] | null;
+      items?: components["schemas"]["EasyAbp.BookingService.PeriodSchemes.Dtos.PeriodDto"][] | null;
     };
     "Volo.Abp.Application.Dtos.ListResultDto`1[[EasyAbp.BookingService.PeriodSchemes.Dtos.PeriodSchemeDto, EasyAbp.BookingService.Common.Application.Contracts, Version=0.4.0.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["EasyAbp.BookingService.PeriodSchemes.Dtos.PeriodSchemeDto"])[] | null;
+      items?: components["schemas"]["EasyAbp.BookingService.PeriodSchemes.Dtos.PeriodSchemeDto"][] | null;
     };
     "Volo.Abp.Application.Dtos.ListResultDto`1[[Tourmap.Camping.CampingAreas.CampingAreaDto+ForBrowse, Tourmap.Camping.Application.Contracts, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Tourmap.Camping.CampingAreas.CampingAreaDto+ForBrowse"])[] | null;
+      items?: components["schemas"]["Tourmap.Camping.CampingAreas.CampingAreaDto+ForBrowse"][] | null;
     };
     "Volo.Abp.Application.Dtos.ListResultDto`1[[Tourmap.Camping.CampingAreas.CampingAreaDto, Tourmap.Camping.Application.Contracts, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Tourmap.Camping.CampingAreas.CampingAreaDto"])[] | null;
+      items?: components["schemas"]["Tourmap.Camping.CampingAreas.CampingAreaDto"][] | null;
     };
     "Volo.Abp.Application.Dtos.ListResultDto`1[[Tourmap.ProductService.IntervalPeriodSchemes.IntervalPeriodSchemeDto, Tourmap.ProductService.Application.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Tourmap.ProductService.IntervalPeriodSchemes.IntervalPeriodSchemeDto"])[] | null;
+      items?: components["schemas"]["Tourmap.ProductService.IntervalPeriodSchemes.IntervalPeriodSchemeDto"][] | null;
     };
     "Volo.Abp.Application.Dtos.ListResultDto`1[[Tourmap.ProductService.Products.ProductDto+ForBrowse, Tourmap.ProductService.Application.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Tourmap.ProductService.Products.ProductDto+ForBrowse"])[] | null;
+      items?: components["schemas"]["Tourmap.ProductService.Products.ProductDto+ForBrowse"][] | null;
     };
     "Volo.Abp.Application.Dtos.ListResultDto`1[[Volo.Abp.Identity.IdentityRoleDto, Volo.Abp.Identity.Pro.Application.Contracts, Version=7.2.2.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Volo.Abp.Identity.IdentityRoleDto"])[] | null;
+      items?: components["schemas"]["Volo.Abp.Identity.IdentityRoleDto"][] | null;
     };
     "Volo.Abp.Application.Dtos.ListResultDto`1[[Volo.Abp.Identity.OrganizationUnitWithDetailsDto, Volo.Abp.Identity.Pro.Application.Contracts, Version=7.2.2.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Volo.Abp.Identity.OrganizationUnitWithDetailsDto"])[] | null;
+      items?: components["schemas"]["Volo.Abp.Identity.OrganizationUnitWithDetailsDto"][] | null;
     };
     "Volo.Abp.Application.Dtos.ListResultDto`1[[Volo.Abp.LanguageManagement.Dto.LanguageDto, Volo.Abp.LanguageManagement.Application.Contracts, Version=7.2.2.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Volo.Abp.LanguageManagement.Dto.LanguageDto"])[] | null;
+      items?: components["schemas"]["Volo.Abp.LanguageManagement.Dto.LanguageDto"][] | null;
     };
     "Volo.Abp.Application.Dtos.ListResultDto`1[[Volo.Abp.Users.UserData, Volo.Abp.Users.Abstractions, Version=7.2.2.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Volo.Abp.Users.UserData"])[] | null;
+      items?: components["schemas"]["Volo.Abp.Users.UserData"][] | null;
     };
     "Volo.Abp.Application.Dtos.ListResultDto`1[[Volo.CmsKit.Menus.MenuItemDto, Volo.CmsKit.Common.Application.Contracts, Version=7.2.2.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Volo.CmsKit.Menus.MenuItemDto"])[] | null;
+      items?: components["schemas"]["Volo.CmsKit.Menus.MenuItemDto"][] | null;
     };
     "Volo.Abp.Application.Dtos.ListResultDto`1[[Volo.CmsKit.Public.Comments.CommentWithDetailsDto, Volo.CmsKit.Public.Application.Contracts, Version=7.2.2.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Volo.CmsKit.Public.Comments.CommentWithDetailsDto"])[] | null;
+      items?: components["schemas"]["Volo.CmsKit.Public.Comments.CommentWithDetailsDto"][] | null;
     };
     "Volo.Abp.Application.Dtos.ListResultDto`1[[Volo.CmsKit.Public.Reactions.ReactionWithSelectionDto, Volo.CmsKit.Public.Application.Contracts, Version=7.2.2.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Volo.CmsKit.Public.Reactions.ReactionWithSelectionDto"])[] | null;
+      items?: components["schemas"]["Volo.CmsKit.Public.Reactions.ReactionWithSelectionDto"][] | null;
     };
     "Volo.Abp.Application.Dtos.PagedResultDto`1[[EasyAbp.BookingService.AssetCategories.Dtos.AssetCategoryDto, EasyAbp.BookingService.Common.Application.Contracts, Version=0.4.0.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["EasyAbp.BookingService.AssetCategories.Dtos.AssetCategoryDto"])[] | null;
+      items?: components["schemas"]["EasyAbp.BookingService.AssetCategories.Dtos.AssetCategoryDto"][] | null;
       /** Format: int64 */
       totalCount?: number;
     };
     "Volo.Abp.Application.Dtos.PagedResultDto`1[[EasyAbp.BookingService.AssetOccupancies.Dtos.AssetOccupancyDto, EasyAbp.BookingService.Common.Application.Contracts, Version=0.4.0.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["EasyAbp.BookingService.AssetOccupancies.Dtos.AssetOccupancyDto"])[] | null;
+      items?: components["schemas"]["EasyAbp.BookingService.AssetOccupancies.Dtos.AssetOccupancyDto"][] | null;
       /** Format: int64 */
       totalCount?: number;
     };
     "Volo.Abp.Application.Dtos.PagedResultDto`1[[EasyAbp.BookingService.AssetPeriodSchemes.Dtos.AssetPeriodSchemeDto, EasyAbp.BookingService.Common.Application.Contracts, Version=0.4.0.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["EasyAbp.BookingService.AssetPeriodSchemes.Dtos.AssetPeriodSchemeDto"])[] | null;
+      items?: components["schemas"]["EasyAbp.BookingService.AssetPeriodSchemes.Dtos.AssetPeriodSchemeDto"][] | null;
       /** Format: int64 */
       totalCount?: number;
     };
     "Volo.Abp.Application.Dtos.PagedResultDto`1[[EasyAbp.BookingService.AssetSchedules.Dtos.AssetScheduleDto, EasyAbp.BookingService.Common.Application.Contracts, Version=0.4.0.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["EasyAbp.BookingService.AssetSchedules.Dtos.AssetScheduleDto"])[] | null;
+      items?: components["schemas"]["EasyAbp.BookingService.AssetSchedules.Dtos.AssetScheduleDto"][] | null;
       /** Format: int64 */
       totalCount?: number;
     };
     "Volo.Abp.Application.Dtos.PagedResultDto`1[[EasyAbp.BookingService.Assets.Dtos.AssetDto, EasyAbp.BookingService.Common.Application.Contracts, Version=0.4.0.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["EasyAbp.BookingService.Assets.Dtos.AssetDto"])[] | null;
+      items?: components["schemas"]["EasyAbp.BookingService.Assets.Dtos.AssetDto"][] | null;
       /** Format: int64 */
       totalCount?: number;
     };
     "Volo.Abp.Application.Dtos.PagedResultDto`1[[EasyAbp.BookingService.PeriodSchemes.Dtos.PeriodSchemeDto, EasyAbp.BookingService.Common.Application.Contracts, Version=0.4.0.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["EasyAbp.BookingService.PeriodSchemes.Dtos.PeriodSchemeDto"])[] | null;
+      items?: components["schemas"]["EasyAbp.BookingService.PeriodSchemes.Dtos.PeriodSchemeDto"][] | null;
       /** Format: int64 */
       totalCount?: number;
     };
     "Volo.Abp.Application.Dtos.PagedResultDto`1[[Tourmap.ProductService.Projects.ProjectDto, Tourmap.ProductService.Application.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Tourmap.ProductService.Projects.ProjectDto"])[] | null;
+      items?: components["schemas"]["Tourmap.ProductService.Projects.ProjectDto"][] | null;
       /** Format: int64 */
       totalCount?: number;
     };
     "Volo.Abp.Application.Dtos.PagedResultDto`1[[Volo.Abp.AuditLogging.AuditLogDto, Volo.Abp.AuditLogging.Application.Contracts, Version=7.2.2.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Volo.Abp.AuditLogging.AuditLogDto"])[] | null;
+      items?: components["schemas"]["Volo.Abp.AuditLogging.AuditLogDto"][] | null;
       /** Format: int64 */
       totalCount?: number;
     };
     "Volo.Abp.Application.Dtos.PagedResultDto`1[[Volo.Abp.AuditLogging.EntityChangeDto, Volo.Abp.AuditLogging.Application.Contracts, Version=7.2.2.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Volo.Abp.AuditLogging.EntityChangeDto"])[] | null;
+      items?: components["schemas"]["Volo.Abp.AuditLogging.EntityChangeDto"][] | null;
       /** Format: int64 */
       totalCount?: number;
     };
     "Volo.Abp.Application.Dtos.PagedResultDto`1[[Volo.Abp.Identity.ClaimTypeDto, Volo.Abp.Identity.Pro.Application.Contracts, Version=7.2.2.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Volo.Abp.Identity.ClaimTypeDto"])[] | null;
+      items?: components["schemas"]["Volo.Abp.Identity.ClaimTypeDto"][] | null;
       /** Format: int64 */
       totalCount?: number;
     };
     "Volo.Abp.Application.Dtos.PagedResultDto`1[[Volo.Abp.Identity.IdentityRoleDto, Volo.Abp.Identity.Pro.Application.Contracts, Version=7.2.2.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Volo.Abp.Identity.IdentityRoleDto"])[] | null;
+      items?: components["schemas"]["Volo.Abp.Identity.IdentityRoleDto"][] | null;
       /** Format: int64 */
       totalCount?: number;
     };
     "Volo.Abp.Application.Dtos.PagedResultDto`1[[Volo.Abp.Identity.IdentitySecurityLogDto, Volo.Abp.Identity.Pro.Application.Contracts, Version=7.2.2.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Volo.Abp.Identity.IdentitySecurityLogDto"])[] | null;
+      items?: components["schemas"]["Volo.Abp.Identity.IdentitySecurityLogDto"][] | null;
       /** Format: int64 */
       totalCount?: number;
     };
     "Volo.Abp.Application.Dtos.PagedResultDto`1[[Volo.Abp.Identity.IdentityUserDto, Volo.Abp.Identity.Pro.Application.Contracts, Version=7.2.2.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Volo.Abp.Identity.IdentityUserDto"])[] | null;
+      items?: components["schemas"]["Volo.Abp.Identity.IdentityUserDto"][] | null;
       /** Format: int64 */
       totalCount?: number;
     };
     "Volo.Abp.Application.Dtos.PagedResultDto`1[[Volo.Abp.Identity.OrganizationUnitWithDetailsDto, Volo.Abp.Identity.Pro.Application.Contracts, Version=7.2.2.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Volo.Abp.Identity.OrganizationUnitWithDetailsDto"])[] | null;
+      items?: components["schemas"]["Volo.Abp.Identity.OrganizationUnitWithDetailsDto"][] | null;
       /** Format: int64 */
       totalCount?: number;
     };
     "Volo.Abp.Application.Dtos.PagedResultDto`1[[Volo.Abp.LanguageManagement.Dto.LanguageDto, Volo.Abp.LanguageManagement.Application.Contracts, Version=7.2.2.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Volo.Abp.LanguageManagement.Dto.LanguageDto"])[] | null;
+      items?: components["schemas"]["Volo.Abp.LanguageManagement.Dto.LanguageDto"][] | null;
       /** Format: int64 */
       totalCount?: number;
     };
     "Volo.Abp.Application.Dtos.PagedResultDto`1[[Volo.Abp.LanguageManagement.Dto.LanguageTextDto, Volo.Abp.LanguageManagement.Application.Contracts, Version=7.2.2.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Volo.Abp.LanguageManagement.Dto.LanguageTextDto"])[] | null;
+      items?: components["schemas"]["Volo.Abp.LanguageManagement.Dto.LanguageTextDto"][] | null;
       /** Format: int64 */
       totalCount?: number;
     };
     "Volo.Abp.Application.Dtos.PagedResultDto`1[[Volo.Abp.OpenIddict.Applications.Dtos.ApplicationDto, Volo.Abp.OpenIddict.Pro.Application.Contracts, Version=7.2.2.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Volo.Abp.OpenIddict.Applications.Dtos.ApplicationDto"])[] | null;
+      items?: components["schemas"]["Volo.Abp.OpenIddict.Applications.Dtos.ApplicationDto"][] | null;
       /** Format: int64 */
       totalCount?: number;
     };
     "Volo.Abp.Application.Dtos.PagedResultDto`1[[Volo.Abp.OpenIddict.Scopes.Dtos.ScopeDto, Volo.Abp.OpenIddict.Pro.Application.Contracts, Version=7.2.2.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Volo.Abp.OpenIddict.Scopes.Dtos.ScopeDto"])[] | null;
+      items?: components["schemas"]["Volo.Abp.OpenIddict.Scopes.Dtos.ScopeDto"][] | null;
       /** Format: int64 */
       totalCount?: number;
     };
     "Volo.Abp.Application.Dtos.PagedResultDto`1[[Volo.Abp.TextTemplateManagement.TextTemplates.TemplateDefinitionDto, Volo.Abp.TextTemplateManagement.Application.Contracts, Version=7.2.2.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Volo.Abp.TextTemplateManagement.TextTemplates.TemplateDefinitionDto"])[] | null;
+      items?: components["schemas"]["Volo.Abp.TextTemplateManagement.TextTemplates.TemplateDefinitionDto"][] | null;
       /** Format: int64 */
       totalCount?: number;
     };
     "Volo.Abp.Application.Dtos.PagedResultDto`1[[Volo.CmsKit.Admin.Blogs.BlogDto, Volo.CmsKit.Admin.Application.Contracts, Version=7.2.2.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Volo.CmsKit.Admin.Blogs.BlogDto"])[] | null;
+      items?: components["schemas"]["Volo.CmsKit.Admin.Blogs.BlogDto"][] | null;
       /** Format: int64 */
       totalCount?: number;
     };
     "Volo.Abp.Application.Dtos.PagedResultDto`1[[Volo.CmsKit.Admin.Blogs.BlogPostListDto, Volo.CmsKit.Admin.Application.Contracts, Version=7.2.2.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Volo.CmsKit.Admin.Blogs.BlogPostListDto"])[] | null;
+      items?: components["schemas"]["Volo.CmsKit.Admin.Blogs.BlogPostListDto"][] | null;
       /** Format: int64 */
       totalCount?: number;
     };
     "Volo.Abp.Application.Dtos.PagedResultDto`1[[Volo.CmsKit.Admin.Comments.CommentWithAuthorDto, Volo.CmsKit.Admin.Application.Contracts, Version=7.2.2.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Volo.CmsKit.Admin.Comments.CommentWithAuthorDto"])[] | null;
+      items?: components["schemas"]["Volo.CmsKit.Admin.Comments.CommentWithAuthorDto"][] | null;
       /** Format: int64 */
       totalCount?: number;
     };
     "Volo.Abp.Application.Dtos.PagedResultDto`1[[Volo.CmsKit.Admin.Menus.PageLookupDto, Volo.CmsKit.Admin.Application.Contracts, Version=7.2.2.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Volo.CmsKit.Admin.Menus.PageLookupDto"])[] | null;
+      items?: components["schemas"]["Volo.CmsKit.Admin.Menus.PageLookupDto"][] | null;
       /** Format: int64 */
       totalCount?: number;
     };
     "Volo.Abp.Application.Dtos.PagedResultDto`1[[Volo.CmsKit.Admin.Pages.PageDto, Volo.CmsKit.Admin.Application.Contracts, Version=7.2.2.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Volo.CmsKit.Admin.Pages.PageDto"])[] | null;
+      items?: components["schemas"]["Volo.CmsKit.Admin.Pages.PageDto"][] | null;
       /** Format: int64 */
       totalCount?: number;
     };
     "Volo.Abp.Application.Dtos.PagedResultDto`1[[Volo.CmsKit.Contents.BlogPostCommonDto, Volo.CmsKit.Common.Application.Contracts, Version=7.2.2.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Volo.CmsKit.Contents.BlogPostCommonDto"])[] | null;
+      items?: components["schemas"]["Volo.CmsKit.Contents.BlogPostCommonDto"][] | null;
       /** Format: int64 */
       totalCount?: number;
     };
     "Volo.Abp.Application.Dtos.PagedResultDto`1[[Volo.CmsKit.Tags.TagDto, Volo.CmsKit.Common.Application.Contracts, Version=7.2.2.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Volo.CmsKit.Tags.TagDto"])[] | null;
+      items?: components["schemas"]["Volo.CmsKit.Tags.TagDto"][] | null;
       /** Format: int64 */
       totalCount?: number;
     };
     "Volo.Abp.Application.Dtos.PagedResultDto`1[[Volo.CmsKit.Users.CmsUserDto, Volo.CmsKit.Common.Application.Contracts, Version=7.2.2.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Volo.CmsKit.Users.CmsUserDto"])[] | null;
+      items?: components["schemas"]["Volo.CmsKit.Users.CmsUserDto"][] | null;
       /** Format: int64 */
       totalCount?: number;
     };
     "Volo.Abp.Application.Dtos.PagedResultDto`1[[Volo.Saas.Host.Dtos.EditionDto, Volo.Saas.Host.Application.Contracts, Version=7.2.2.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Volo.Saas.Host.Dtos.EditionDto"])[] | null;
+      items?: components["schemas"]["Volo.Saas.Host.Dtos.EditionDto"][] | null;
       /** Format: int64 */
       totalCount?: number;
     };
     "Volo.Abp.Application.Dtos.PagedResultDto`1[[Volo.Saas.Host.Dtos.SaasTenantDto, Volo.Saas.Host.Application.Contracts, Version=7.2.2.0, Culture=neutral, PublicKeyToken=null]]": {
-      items?: (components["schemas"]["Volo.Saas.Host.Dtos.SaasTenantDto"])[] | null;
+      items?: components["schemas"]["Volo.Saas.Host.Dtos.SaasTenantDto"][] | null;
       /** Format: int64 */
       totalCount?: number;
     };
@@ -22918,7 +23444,7 @@ export interface components {
       }) | null;
     };
     "Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.ApplicationGlobalFeatureConfigurationDto": {
-      enabledFeatures?: (string)[] | null;
+      enabledFeatures?: string[] | null;
     };
     "Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.ApplicationLocalizationConfigurationDto": {
       values?: ({
@@ -22929,14 +23455,14 @@ export interface components {
       resources?: ({
         [key: string]: components["schemas"]["Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.ApplicationLocalizationResourceDto"] | undefined;
       }) | null;
-      languages?: (components["schemas"]["Volo.Abp.Localization.LanguageInfo"])[] | null;
+      languages?: components["schemas"]["Volo.Abp.Localization.LanguageInfo"][] | null;
       currentCulture?: components["schemas"]["Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.CurrentCultureDto"];
       defaultResourceName?: string | null;
       languagesMap?: ({
-        [key: string]: ((components["schemas"]["Volo.Abp.NameValue"])[] | null) | undefined;
+        [key: string]: (components["schemas"]["Volo.Abp.NameValue"][] | null) | undefined;
       }) | null;
       languageFilesMap?: ({
-        [key: string]: ((components["schemas"]["Volo.Abp.NameValue"])[] | null) | undefined;
+        [key: string]: (components["schemas"]["Volo.Abp.NameValue"][] | null) | undefined;
       }) | null;
     };
     "Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.ApplicationLocalizationDto": {
@@ -22948,7 +23474,7 @@ export interface components {
       texts?: ({
         [key: string]: (string | null) | undefined;
       }) | null;
-      baseResources?: (string)[] | null;
+      baseResources?: string[] | null;
     };
     "Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.ApplicationSettingConfigurationDto": {
       values?: ({
@@ -22988,7 +23514,7 @@ export interface components {
       emailVerified?: boolean;
       phoneNumber?: string | null;
       phoneNumberVerified?: boolean;
-      roles?: (string)[] | null;
+      roles?: string[] | null;
     };
     "Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.DateTimeFormatDto": {
       calendarAlgorithmType?: string | null;
@@ -23011,7 +23537,7 @@ export interface components {
       }) | null;
     };
     "Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.ObjectExtending.ExtensionEnumDto": {
-      fields?: (components["schemas"]["Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.ObjectExtending.ExtensionEnumFieldDto"])[] | null;
+      fields?: components["schemas"]["Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.ObjectExtending.ExtensionEnumFieldDto"][] | null;
       localizationResource?: string | null;
     };
     "Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.ObjectExtending.ExtensionEnumFieldDto": {
@@ -23044,7 +23570,7 @@ export interface components {
       displayName?: components["schemas"]["Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.ObjectExtending.LocalizableStringDto"];
       api?: components["schemas"]["Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.ObjectExtending.ExtensionPropertyApiDto"];
       ui?: components["schemas"]["Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.ObjectExtending.ExtensionPropertyUiDto"];
-      attributes?: (components["schemas"]["Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.ObjectExtending.ExtensionPropertyAttributeDto"])[] | null;
+      attributes?: components["schemas"]["Volo.Abp.AspNetCore.Mvc.ApplicationConfigurations.ObjectExtending.ExtensionPropertyAttributeDto"][] | null;
       configuration?: ({
         [key: string]: (Record<string, unknown> | null) | undefined;
       }) | null;
@@ -23166,8 +23692,8 @@ export interface components {
       httpStatusCode?: number | null;
       applicationName?: string | null;
       correlationId?: string | null;
-      entityChanges?: (components["schemas"]["Volo.Abp.AuditLogging.EntityChangeDto"])[] | null;
-      actions?: (components["schemas"]["Volo.Abp.AuditLogging.AuditLogActionDto"])[] | null;
+      entityChanges?: components["schemas"]["Volo.Abp.AuditLogging.EntityChangeDto"][] | null;
+      actions?: components["schemas"]["Volo.Abp.AuditLogging.AuditLogActionDto"][] | null;
     };
     "Volo.Abp.AuditLogging.EntityChangeDto": {
       extraProperties?: {
@@ -23184,7 +23710,7 @@ export interface components {
       changeType?: components["schemas"]["Volo.Abp.Auditing.EntityChangeType"];
       entityId?: string | null;
       entityTypeFullName?: string | null;
-      propertyChanges?: (components["schemas"]["Volo.Abp.AuditLogging.EntityPropertyChangeDto"])[] | null;
+      propertyChanges?: components["schemas"]["Volo.Abp.AuditLogging.EntityPropertyChangeDto"][] | null;
     };
     "Volo.Abp.AuditLogging.EntityChangeWithUsernameDto": {
       entityChange?: components["schemas"]["Volo.Abp.AuditLogging.EntityChangeDto"];
@@ -23213,7 +23739,7 @@ export interface components {
       }) | null;
     };
     /**
-     * Format: int32 
+     * Format: int32
      * @enum {integer}
      */
     "Volo.Abp.Auditing.EntityChangeType": 0 | 1 | 2;
@@ -23231,30 +23757,30 @@ export interface components {
     "Volo.Abp.FeatureManagement.FeatureGroupDto": {
       name?: string | null;
       displayName?: string | null;
-      features?: (components["schemas"]["Volo.Abp.FeatureManagement.FeatureDto"])[] | null;
+      features?: components["schemas"]["Volo.Abp.FeatureManagement.FeatureDto"][] | null;
     };
     "Volo.Abp.FeatureManagement.FeatureProviderDto": {
       name?: string | null;
       key?: string | null;
     };
     "Volo.Abp.FeatureManagement.GetFeatureListResultDto": {
-      groups?: (components["schemas"]["Volo.Abp.FeatureManagement.FeatureGroupDto"])[] | null;
+      groups?: components["schemas"]["Volo.Abp.FeatureManagement.FeatureGroupDto"][] | null;
     };
     "Volo.Abp.FeatureManagement.UpdateFeatureDto": {
       name?: string | null;
       value?: string | null;
     };
     "Volo.Abp.FeatureManagement.UpdateFeaturesDto": {
-      features?: (components["schemas"]["Volo.Abp.FeatureManagement.UpdateFeatureDto"])[] | null;
+      features?: components["schemas"]["Volo.Abp.FeatureManagement.UpdateFeatureDto"][] | null;
     };
     "Volo.Abp.Http.Modeling.ActionApiDescriptionModel": {
       uniqueName?: string | null;
       name?: string | null;
       httpMethod?: string | null;
       url?: string | null;
-      supportedVersions?: (string)[] | null;
-      parametersOnMethod?: (components["schemas"]["Volo.Abp.Http.Modeling.MethodParameterApiDescriptionModel"])[] | null;
-      parameters?: (components["schemas"]["Volo.Abp.Http.Modeling.ParameterApiDescriptionModel"])[] | null;
+      supportedVersions?: string[] | null;
+      parametersOnMethod?: components["schemas"]["Volo.Abp.Http.Modeling.MethodParameterApiDescriptionModel"][] | null;
+      parameters?: components["schemas"]["Volo.Abp.Http.Modeling.ParameterApiDescriptionModel"][] | null;
       returnValue?: components["schemas"]["Volo.Abp.Http.Modeling.ReturnValueApiDescriptionModel"];
       allowAnonymous?: boolean | null;
       implementFrom?: string | null;
@@ -23274,7 +23800,7 @@ export interface components {
       isIntegrationService?: boolean;
       apiVersion?: string | null;
       type?: string | null;
-      interfaces?: (components["schemas"]["Volo.Abp.Http.Modeling.ControllerInterfaceApiDescriptionModel"])[] | null;
+      interfaces?: components["schemas"]["Volo.Abp.Http.Modeling.ControllerInterfaceApiDescriptionModel"][] | null;
       actions?: ({
         [key: string]: components["schemas"]["Volo.Abp.Http.Modeling.ActionApiDescriptionModel"] | undefined;
       }) | null;
@@ -23282,11 +23808,11 @@ export interface components {
     "Volo.Abp.Http.Modeling.ControllerInterfaceApiDescriptionModel": {
       type?: string | null;
       name?: string | null;
-      methods?: (components["schemas"]["Volo.Abp.Http.Modeling.InterfaceMethodApiDescriptionModel"])[] | null;
+      methods?: components["schemas"]["Volo.Abp.Http.Modeling.InterfaceMethodApiDescriptionModel"][] | null;
     };
     "Volo.Abp.Http.Modeling.InterfaceMethodApiDescriptionModel": {
       name?: string | null;
-      parametersOnMethod?: (components["schemas"]["Volo.Abp.Http.Modeling.MethodParameterApiDescriptionModel"])[] | null;
+      parametersOnMethod?: components["schemas"]["Volo.Abp.Http.Modeling.MethodParameterApiDescriptionModel"][] | null;
       returnValue?: components["schemas"]["Volo.Abp.Http.Modeling.ReturnValueApiDescriptionModel"];
     };
     "Volo.Abp.Http.Modeling.MethodParameterApiDescriptionModel": {
@@ -23312,7 +23838,7 @@ export interface components {
       typeSimple?: string | null;
       isOptional?: boolean;
       defaultValue?: Record<string, unknown> | null;
-      constraintTypes?: (string)[] | null;
+      constraintTypes?: string[] | null;
       bindingSourceId?: string | null;
       descriptorName?: string | null;
     };
@@ -23337,10 +23863,10 @@ export interface components {
     "Volo.Abp.Http.Modeling.TypeApiDescriptionModel": {
       baseType?: string | null;
       isEnum?: boolean;
-      enumNames?: (string)[] | null;
-      enumValues?: (unknown)[] | null;
-      genericArguments?: (string)[] | null;
-      properties?: (components["schemas"]["Volo.Abp.Http.Modeling.PropertyApiDescriptionModel"])[] | null;
+      enumNames?: string[] | null;
+      enumValues?: unknown[] | null;
+      genericArguments?: string[] | null;
+      properties?: components["schemas"]["Volo.Abp.Http.Modeling.PropertyApiDescriptionModel"][] | null;
     };
     "Volo.Abp.Http.RemoteServiceErrorInfo": {
       code?: string | null;
@@ -23349,14 +23875,14 @@ export interface components {
       data?: {
         [key: string]: unknown;
       } | null;
-      validationErrors?: (components["schemas"]["Volo.Abp.Http.RemoteServiceValidationErrorInfo"])[] | null;
+      validationErrors?: components["schemas"]["Volo.Abp.Http.RemoteServiceValidationErrorInfo"][] | null;
     };
     "Volo.Abp.Http.RemoteServiceErrorResponse": {
       error?: components["schemas"]["Volo.Abp.Http.RemoteServiceErrorInfo"];
     };
     "Volo.Abp.Http.RemoteServiceValidationErrorInfo": {
       message?: string | null;
-      members?: (string)[] | null;
+      members?: string[] | null;
     };
     "Volo.Abp.Identity.ClaimTypeDto": {
       extraProperties?: {
@@ -23390,12 +23916,12 @@ export interface components {
       canObtainUserInfoWithoutPassword?: boolean;
     };
     /**
-     * Format: int32 
+     * Format: int32
      * @enum {integer}
      */
     "Volo.Abp.Identity.Features.IdentityProTwoFactorBehaviour": 0 | 1 | 2;
     /**
-     * Format: int32 
+     * Format: int32
      * @enum {integer}
      */
     "Volo.Abp.Identity.IdentityClaimValueType": 0 | 1 | 2 | 3;
@@ -23530,8 +24056,8 @@ export interface components {
       isActive?: boolean;
       shouldChangePasswordOnNextLogin?: boolean;
       lockoutEnabled?: boolean;
-      roleNames?: (string)[] | null;
-      organizationUnitIds?: (string)[] | null;
+      roleNames?: string[] | null;
+      organizationUnitIds?: string[] | null;
       password: string;
       sendConfirmationEmail?: boolean;
     };
@@ -23567,7 +24093,7 @@ export interface components {
       lockoutEnd?: string | null;
       shouldChangePasswordOnNextLogin?: boolean;
       concurrencyStamp?: string | null;
-      roleNames?: (string)[] | null;
+      roleNames?: string[] | null;
       /** Format: int32 */
       accessFailedCount?: number;
       /** Format: date-time */
@@ -23590,15 +24116,15 @@ export interface components {
       isActive?: boolean;
       shouldChangePasswordOnNextLogin?: boolean;
       lockoutEnabled?: boolean;
-      roleNames?: (string)[] | null;
-      organizationUnitIds?: (string)[] | null;
+      roleNames?: string[] | null;
+      organizationUnitIds?: string[] | null;
       concurrencyStamp?: string | null;
     };
     "Volo.Abp.Identity.IdentityUserUpdatePasswordInput": {
       newPassword: string;
     };
     "Volo.Abp.Identity.IdentityUserUpdateRolesDto": {
-      roleNames: (string)[];
+      roleNames: string[];
     };
     "Volo.Abp.Identity.ImportExternalUserInput": {
       provider: string;
@@ -23636,7 +24162,7 @@ export interface components {
       parentId?: string | null;
       code?: string | null;
       displayName?: string | null;
-      roles?: (components["schemas"]["Volo.Abp.Identity.OrganizationUnitRoleDto"])[] | null;
+      roles?: components["schemas"]["Volo.Abp.Identity.OrganizationUnitRoleDto"][] | null;
     };
     "Volo.Abp.Identity.OrganizationUnitLookupDto": {
       /** Format: uuid */
@@ -23658,7 +24184,7 @@ export interface components {
       roleId?: string;
     };
     "Volo.Abp.Identity.OrganizationUnitRoleInput": {
-      roleIds?: (string)[] | null;
+      roleIds?: string[] | null;
     };
     "Volo.Abp.Identity.OrganizationUnitUpdateDto": {
       extraProperties?: {
@@ -23668,7 +24194,7 @@ export interface components {
       concurrencyStamp?: string | null;
     };
     "Volo.Abp.Identity.OrganizationUnitUserInput": {
-      userIds?: (string)[] | null;
+      userIds?: string[] | null;
     };
     "Volo.Abp.Identity.OrganizationUnitWithDetailsDto": {
       extraProperties?: {
@@ -23693,7 +24219,7 @@ export interface components {
       parentId?: string | null;
       code?: string | null;
       displayName?: string | null;
-      roles?: (components["schemas"]["Volo.Abp.Identity.IdentityRoleDto"])[] | null;
+      roles?: components["schemas"]["Volo.Abp.Identity.IdentityRoleDto"][] | null;
       concurrencyStamp?: string | null;
     };
     "Volo.Abp.Identity.UpdateClaimTypeDto": {
@@ -23782,8 +24308,8 @@ export interface components {
       type?: string | null;
       clientSecret?: string | null;
       consentType?: string | null;
-      postLogoutRedirectUris?: (string)[] | null;
-      redirectUris?: (string)[] | null;
+      postLogoutRedirectUris?: string[] | null;
+      redirectUris?: string[] | null;
       allowPasswordFlow?: boolean;
       allowClientCredentialsFlow?: boolean;
       allowAuthorizationCodeFlow?: boolean;
@@ -23792,7 +24318,7 @@ export interface components {
       allowImplicitFlow?: boolean;
       allowLogoutEndpoint?: boolean;
       allowDeviceEndpoint?: boolean;
-      scopes?: (string)[] | null;
+      scopes?: string[] | null;
       clientUri?: string | null;
       logoUri?: string | null;
     };
@@ -23805,8 +24331,8 @@ export interface components {
       type?: string | null;
       clientSecret?: string | null;
       consentType?: string | null;
-      postLogoutRedirectUris?: (string)[] | null;
-      redirectUris?: (string)[] | null;
+      postLogoutRedirectUris?: string[] | null;
+      redirectUris?: string[] | null;
       allowPasswordFlow?: boolean;
       allowClientCredentialsFlow?: boolean;
       allowAuthorizationCodeFlow?: boolean;
@@ -23815,7 +24341,7 @@ export interface components {
       allowImplicitFlow?: boolean;
       allowLogoutEndpoint?: boolean;
       allowDeviceEndpoint?: boolean;
-      scopes?: (string)[] | null;
+      scopes?: string[] | null;
       clientUri?: string | null;
       logoUri?: string | null;
     };
@@ -23828,8 +24354,8 @@ export interface components {
       type?: string | null;
       clientSecret?: string | null;
       consentType?: string | null;
-      postLogoutRedirectUris?: (string)[] | null;
-      redirectUris?: (string)[] | null;
+      postLogoutRedirectUris?: string[] | null;
+      redirectUris?: string[] | null;
       allowPasswordFlow?: boolean;
       allowClientCredentialsFlow?: boolean;
       allowAuthorizationCodeFlow?: boolean;
@@ -23838,7 +24364,7 @@ export interface components {
       allowImplicitFlow?: boolean;
       allowLogoutEndpoint?: boolean;
       allowDeviceEndpoint?: boolean;
-      scopes?: (string)[] | null;
+      scopes?: string[] | null;
       clientUri?: string | null;
       logoUri?: string | null;
     };
@@ -23849,7 +24375,7 @@ export interface components {
       name: string;
       displayName?: string | null;
       description?: string | null;
-      resources?: (string)[] | null;
+      resources?: string[] | null;
     };
     "Volo.Abp.OpenIddict.Scopes.Dtos.ScopeDto": {
       extraProperties?: {
@@ -23861,7 +24387,7 @@ export interface components {
       displayName?: string | null;
       description?: string | null;
       buildIn?: boolean;
-      resources?: (string)[] | null;
+      resources?: string[] | null;
     };
     "Volo.Abp.OpenIddict.Scopes.Dtos.UpdateScopeInput": {
       extraProperties?: {
@@ -23870,26 +24396,26 @@ export interface components {
       name: string;
       displayName?: string | null;
       description?: string | null;
-      resources?: (string)[] | null;
+      resources?: string[] | null;
     };
     "Volo.Abp.PermissionManagement.GetPermissionListResultDto": {
       entityDisplayName?: string | null;
-      groups?: (components["schemas"]["Volo.Abp.PermissionManagement.PermissionGroupDto"])[] | null;
+      groups?: components["schemas"]["Volo.Abp.PermissionManagement.PermissionGroupDto"][] | null;
     };
     "Volo.Abp.PermissionManagement.PermissionGrantInfoDto": {
       name?: string | null;
       displayName?: string | null;
       parentName?: string | null;
       isGranted?: boolean;
-      allowedProviders?: (string)[] | null;
-      grantedProviders?: (components["schemas"]["Volo.Abp.PermissionManagement.ProviderInfoDto"])[] | null;
+      allowedProviders?: string[] | null;
+      grantedProviders?: components["schemas"]["Volo.Abp.PermissionManagement.ProviderInfoDto"][] | null;
     };
     "Volo.Abp.PermissionManagement.PermissionGroupDto": {
       name?: string | null;
       displayName?: string | null;
       displayNameKey?: string | null;
       displayNameResource?: string | null;
-      permissions?: (components["schemas"]["Volo.Abp.PermissionManagement.PermissionGrantInfoDto"])[] | null;
+      permissions?: components["schemas"]["Volo.Abp.PermissionManagement.PermissionGrantInfoDto"][] | null;
     };
     "Volo.Abp.PermissionManagement.ProviderInfoDto": {
       providerName?: string | null;
@@ -23900,7 +24426,7 @@ export interface components {
       isGranted?: boolean;
     };
     "Volo.Abp.PermissionManagement.UpdatePermissionsDto": {
-      permissions?: (components["schemas"]["Volo.Abp.PermissionManagement.UpdatePermissionDto"])[] | null;
+      permissions?: components["schemas"]["Volo.Abp.PermissionManagement.UpdatePermissionDto"][] | null;
     };
     "Volo.Abp.SettingManagement.EmailSettingsDto": {
       smtpHost?: string | null;
@@ -24175,7 +24701,7 @@ export interface components {
     "Volo.CmsKit.Admin.Tags.EntityTagSetDto": {
       entityId?: string | null;
       entityType?: string | null;
-      tags: (string)[];
+      tags: string[];
     };
     "Volo.CmsKit.Admin.Tags.TagCreateDto": {
       entityType: string;
@@ -24196,7 +24722,7 @@ export interface components {
       isEnabled?: boolean;
     };
     /**
-     * Format: int32 
+     * Format: int32
      * @enum {integer}
      */
     "Volo.CmsKit.Blogs.BlogPostStatus": 0 | 1 | 2;
@@ -24288,7 +24814,7 @@ export interface components {
       creatorId?: string;
       /** Format: date-time */
       creationTime?: string;
-      replies?: (components["schemas"]["Volo.CmsKit.Public.Comments.CommentDto"])[] | null;
+      replies?: components["schemas"]["Volo.CmsKit.Public.Comments.CommentDto"][] | null;
       author?: components["schemas"]["Volo.CmsKit.Public.Comments.CmsUserDto"];
       concurrencyStamp?: string | null;
     };
@@ -24403,7 +24929,7 @@ export interface components {
       } | null;
     };
     /**
-     * Format: int32 
+     * Format: int32
      * @enum {integer}
      */
     "Volo.Payment.Requests.PaymentRequestState": 0 | 1 | 2 | 3;
@@ -24413,7 +24939,7 @@ export interface components {
       } | null;
       /** Format: uuid */
       id?: string;
-      products?: (components["schemas"]["Volo.Payment.Requests.PaymentRequestProductDto"])[] | null;
+      products?: components["schemas"]["Volo.Payment.Requests.PaymentRequestProductDto"][] | null;
       currency?: string | null;
       state?: components["schemas"]["Volo.Payment.Requests.PaymentRequestState"];
       failReason?: string | null;
@@ -24427,7 +24953,7 @@ export interface components {
       creationTime?: string;
     };
     /**
-     * Format: int32 
+     * Format: int32
      * @enum {integer}
      */
     "Volo.Payment.Requests.PaymentType": 0 | 1;
@@ -24473,7 +24999,7 @@ export interface components {
         [key: string]: unknown;
       } | null;
       default?: string | null;
-      databases?: (components["schemas"]["Volo.Saas.Host.Dtos.SaasTenantDatabaseConnectionStringsDto"])[] | null;
+      databases?: components["schemas"]["Volo.Saas.Host.Dtos.SaasTenantDatabaseConnectionStringsDto"][] | null;
     };
     "Volo.Saas.Host.Dtos.SaasTenantCreateDto": {
       extraProperties?: {
@@ -24503,7 +25029,7 @@ export interface components {
       extraProperties?: {
         [key: string]: unknown;
       } | null;
-      databases?: (string)[] | null;
+      databases?: string[] | null;
     };
     "Volo.Saas.Host.Dtos.SaasTenantDto": {
       extraProperties?: {
@@ -24547,7 +25073,7 @@ export interface components {
       }) | null;
     };
     /**
-     * Format: int32 
+     * Format: int32
      * @enum {integer}
      */
     "Volo.Saas.TenantActivationState": 0 | 1 | 2;

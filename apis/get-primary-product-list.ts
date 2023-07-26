@@ -1,7 +1,7 @@
 import "server-only";
 import { RequiredDeep } from "type-fest";
 import { paths } from "@/type/api";
-import { DEV_MODE, NEXT_PUBLIC_API_URL } from "@/environments";
+import { NEXT_PUBLIC_API_URL } from "@/environments";
 
 export type GetPrimaryProductListResponse = RequiredDeep<
   paths["/api/product-service/products/camping-product-list"]["get"]["responses"]["200"]["content"]["application/json"]
@@ -32,7 +32,7 @@ export const getPrimaryProductList = async (
     url += `&CampingName=${params.query.CampingName}`;
   }
   const res = await fetch(`${NEXT_PUBLIC_API_URL}${url}`, {
-    next: { revalidate: DEV_MODE ? 0 : 60 },
+    next: { revalidate: 60 },
   });
   const json = await res.json();
   return json as GetPrimaryProductListResponse;

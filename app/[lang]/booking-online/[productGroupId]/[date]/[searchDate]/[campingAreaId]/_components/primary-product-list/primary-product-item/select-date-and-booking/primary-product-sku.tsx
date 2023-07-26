@@ -43,7 +43,6 @@ export default function PrimaryProductSKU({
   const { pending } = useFormStatus();
   const { lang } = useParams();
 
-  const [operationType, setOperationType] = useState<OPERATION_TYPE>(null);
   const [selectedSKUId, setSelectedSKUId] = useState(() => {
     if (
       skuDetail &&
@@ -154,8 +153,8 @@ export default function PrimaryProductSKU({
   const peopleSelect = (
     <Select
       className="w-full"
-      defaultValue={selectedPeople}
-      onChange={handleUpdatePrimaryProductPeopleNumberInCart}
+      value={selectedPeople}
+      onChange={(event) => setSelectedPeople(Number(event.target.value))}
       // disabled={updateCartStatus === 'loading'}
     >
       {Array.from({
@@ -198,6 +197,7 @@ export default function PrimaryProductSKU({
     <>
       <input type="hidden" name="skuId" value={selectedSKUId} readOnly />
       <input type="hidden" name="date" value={selectedDate} readOnly />
+      <input type="hidden" name="people" value={selectedPeople} readOnly />
       <div className="p-4 flex flex-col gap-2">
         {skuSelector}
         {freeAdditionServices}

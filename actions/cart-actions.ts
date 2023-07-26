@@ -11,6 +11,7 @@ import { z } from "zod";
 const AddPrimaryProductToCartDataScheme = z.object({
   skuId: z.string(),
   date: z.string(),
+  people: z.number(),
 });
 
 type UpdateShoppingCartBody = RequiredDeep<
@@ -22,6 +23,7 @@ export async function addPrimaryProductToCart(data: FormData) {
 
   const parsedData = AddPrimaryProductToCartDataScheme.parse({
     skuId: data.get("skuId"),
+    people: Number.parseInt(data.get("people") as string, 10),
     date:
       typeof data.get("date") === "string"
         ? decodeURIComponent(data.get("date") as string)
@@ -40,7 +42,7 @@ export async function addPrimaryProductToCart(data: FormData) {
       {
         id: null,
         productId: parsedData.skuId,
-        quantity: 1,
+        quantity: parsedData.people,
         date: parsedData.date,
       },
     ],

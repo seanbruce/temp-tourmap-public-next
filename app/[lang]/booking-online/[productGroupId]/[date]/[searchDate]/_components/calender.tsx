@@ -37,6 +37,7 @@ export default function Calender({
           productGroupId={productGroupId}
           date={date}
           month={dayjs(thisMonth).subtract(1, "month").format("YYYY-MM-DD")}
+          disabled={dayjs(thisMonth).isSame(dayjs(), "month")}
         />
         <ChangeMonthButton
           title="本月"

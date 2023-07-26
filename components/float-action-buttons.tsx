@@ -57,7 +57,7 @@ export default async function FloatActionButtons({
           "absolute",
           "text-xs",
           "-top-1",
-          "right-0",
+          "left-full",
           "rounded-full",
           "bg-red-500",
           "w-6",
@@ -96,15 +96,17 @@ export default async function FloatActionButtons({
           <Link
             href={`/${lang}/user-cart`}
             prefetch={false}
-            className="relative text-black px-6 py-1 rounded-md font-bold flex justify-center items-center w-full h-full "
+            className=" text-black px-6 py-1 rounded-md font-bold flex justify-center items-center w-full h-full "
           >
             <FontAwesomeIcon
               icon={faCartArrowDown}
               size="sm"
               className="mr-2 w-4"
             />
-            購物車
-            {itemsCount}
+            <span className="relative">
+              購物車
+              {itemsCount}
+            </span>
           </Link>
         </div>
       ) : (

@@ -4,7 +4,6 @@ import {
   getBookingAvailabilityByMonth,
   GetBookingAvailabilityByMonthResponse,
 } from "@/apis/get-booking-availability-by-month";
-import Link from "next/link";
 import DateCell from "./month-view-internal/date-cell";
 
 const WEEKS = ["日", "一", "二", "三", "四", "五", "六"];
@@ -52,7 +51,16 @@ const getAvailabilityByIndex = (
     firstDayOfMonth,
     month
   ).date();
-  return daysAvailability?.bookingableDays?.[day]?.canBooking === true;
+  switch (daysAvailability?.bookingableDays?.[day]?.canBooking) {
+    case 0:
+      return undefined;
+    case 1:
+      return true;
+    case 2:
+      return false;
+    default:
+      return undefined;
+  }
 };
 
 const isSelected = (
@@ -75,7 +83,7 @@ const getAvailabilityStyle = (available?: boolean) => {
   let indicatorColor = "";
   let clickable = "";
   if (available === undefined) {
-    indicatorColor = "bg-gray-500";
+    indicatorColor = "bg-transparent";
     clickable = "pointer-events-none";
   } else {
     if (available) {
