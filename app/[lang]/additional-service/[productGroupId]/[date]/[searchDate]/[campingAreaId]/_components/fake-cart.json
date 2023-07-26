@@ -1,0 +1,108 @@
+{
+  "customerRemark": "訂單的備註",
+  "ownerId": "ee2bb290-3ce2-4ed2-9c8e-85e91b1ba7a9",
+  "shoppingCartItems": [
+    {
+      "additionItems": [
+        {
+          "amount": {
+            "amount": 1,
+            "title": "數量",
+            "unit": "車次"
+          },
+          "customerRemark": "附加服務的備註",
+          "extraProductId": "26a30ca4-fb05-4e4d-8da3-4c48e6e9a6ce",
+          "extraProductName": "高鐵、台鐵(苗栗)",
+          "freeAmount": 0,
+          "primarySpec": {
+            "selectedOption": "苗栗高鐵站",
+            "unitName": "前往觀止/上車地點"
+          },
+          "primaryTimeSpec": {
+            "dateTitle": "入住使用日期",
+            "timeTitle": "入住上車時間",
+            "date": "2023-06-10",
+            "time": "12:00:00"
+          },
+          "secondarySpec": {
+            "selectedOption": "苗栗高鐵站",
+            "unitName": "離開觀止/下車地點"
+          },
+          "secondaryTimeSpec": {
+            "dateTitle": "退房使用日期",
+            "timeTitle": "退房上車時間",
+            "date": "2023-06-10",
+            "time": "12:00:00"
+          },
+          "totalPrice": 700
+        },
+        {
+          "amount": {
+            "amount": 1,
+            "title": "數量",
+            "unit": "次"
+          },
+          "customerRemark": "附加服務的備註",
+          "extraProductId": "27a30ca4-fb05-4e4d-8da3-4c48e6e9a6ce",
+          "extraProductName": "寵物清潔服務",
+          "freeAmount": 0,
+          "primarySpec": {
+            "selectedOption": "苗栗高鐵站",
+            "unitName": "前往觀止/上車地點"
+          },
+          "primaryTimeSpec": {
+            "dateTitle": "入住使用日期",
+            "timeTitle": "入住上車時間",
+            "date": "2023-06-10",
+            "time": "12:00:00"
+          },
+          "secondarySpec": {
+            "selectedOption": "苗栗高鐵站",
+            "unitName": "離開觀止/下車地點"
+          },
+          "secondaryTimeSpec": {
+            "dateTitle": "退房使用日期",
+            "timeTitle": "退房上車時間",
+            "date": "2023-06-10",
+            "time": "12:00:00"
+          },
+          "totalPrice": 700
+        }
+      ],
+      "date": "2023-05-11T00:00:00",
+      "price": 1000,
+      "primaryProductId": "351ee481-ee76-2142-7e0d-3a0b0b655040",
+      "primaryProductSkuId": "0fb5af69-20aa-8a01-ea4d-3a0b0b6556b3",
+      "productSkuName": "A1_露營區+非常長的名稱非常長的名稱非常長的名稱",
+      "people": 3
+    },
+    {
+      "additionItems": [],
+      "date": "2023-05-12T00:00:00",
+      "price": 1000,
+      "primaryProductId": "38f23a29-bf93-4cc4-a20b-3a0b0b654f67",
+      "primaryProductSkuId": "0fb5af69-20aa-8a01-ea4d-3a0b0b6556b3",
+      "productSkuName": "A1_露營區",
+      "people": 2
+    },
+    {
+      "additionItems": [],
+      "date": "2023-05-11T00:00:00",
+      "price": 1000,
+      "primaryProductId": "ffe88553-28b2-d000-a9b5-3a0b0b654fe7",
+      "primaryProductSkuId": "61298d6b-ac27-4d70-c33a-3a0b0b6558b7",
+      "productSkuName": "A2_露營區",
+      "people": 4
+    },
+    {
+      "additionItems": [],
+      "date": "2023-05-12T00:00:00",
+      "price": 1000,
+      "primaryProductId": "ffe88553-28b2-d000-a9b5-3a0b0b654fe7",
+      "primaryProductSkuId": "61298d6b-ac27-4d70-c33a-3a0b0b6558b7",
+      "productSkuName": "A2_露營區",
+      "people": 2
+    }
+  ],
+  "totalPrice": 1700
+}

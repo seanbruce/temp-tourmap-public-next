@@ -3,7 +3,9 @@ import CompanyCarousel from "@/components/company-carousel";
 import PageContainer from "@/components/page-container";
 import { getProductGroupList } from "@/apis/get-product-group-list";
 import { getCampingAreaList } from "@/apis/get-camping-area-list";
-import ProductGroupLink from "./_components/product-group-link";
+import ProductGroupLink, {
+  Loading as ProductGroupLinkLoading,
+} from "./_components/product-group-link";
 
 interface BookingOnlinePageProps {
   params: { lang: string };
@@ -32,7 +34,10 @@ export default async function BookingOnlinePage({
           {productGroupList
             ?.filter((productGroup) => productGroup.productGroup.isPrimary)
             .map((productGroup) => (
-              <Suspense key={productGroup.productGroup.id} fallback={null}>
+              <Suspense
+                key={productGroup.productGroup.id}
+                fallback={<ProductGroupLinkLoading />}
+              >
                 <ProductGroupLink
                   lang={lang}
                   campingAreaId={firstCampingAreaId}

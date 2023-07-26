@@ -28,7 +28,7 @@ export default async function Layout({
       <BreadCrumb lang={lang} />
       <PageContainer>
         <CampingCarousel />
-        <BookingStepper currentStep={2} />
+        <BookingStepper currentStep={1} />
         <Calender
           lang={lang}
           productGroupId={productGroupId}

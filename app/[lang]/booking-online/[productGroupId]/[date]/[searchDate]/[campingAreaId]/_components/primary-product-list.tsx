@@ -24,6 +24,7 @@ export default async function PrimaryProductList({
       ProductGroupId: productGroupId,
     },
   });
+  console.log({ primaryProductList });
   let primaryProductListUI = null;
 
   if (primaryProductList.length === 0) {

@@ -45,3 +45,12 @@ export default async function ProductGroupLink({
     </Link>
   );
 }
+
+export function Loading() {
+  return (
+    <div>
+      <div className="w-[144px] h-[144px] mb-1 rounded-full bg-skeleton animate-pulse" />
+      <div className="w-[100px] h-[20px] bg-skeleton animate-pulse mx-auto" />
+    </div>
+  );
+}

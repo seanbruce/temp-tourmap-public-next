@@ -1,8 +1,9 @@
-import { getCartByUser } from "@/apis/get-cart-by-user";
 import { faCartArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { clsx } from "clsx";
 import Link from "next/link";
+import CartBadge from "./float-action-button/cart-badge";
+import { Suspense } from "react";
 
 type FloatActionButtonProps = Pick<
   React.DetailedHTMLProps<
@@ -16,6 +17,7 @@ function FloatActionButton({ disabled, children }: FloatActionButtonProps) {
   return (
     <button
       className={clsx(
+        "h-full",
         "border-black",
         "text-black",
         "hover:bg-brand-gold-dark",
@@ -49,33 +51,6 @@ export default async function FloatActionButtons({
   showCart = true,
   float = true,
 }: FloatActionButtonsProps) {
-  const cart = await getCartByUser();
-  const itemsCount =
-    cart && cart.shoppingCartItems && cart.shoppingCartItems.length > 0 ? (
-      <div
-        className={clsx(
-          "absolute",
-          "text-xs",
-          "-top-1",
-          "left-full",
-          "rounded-full",
-          "bg-red-500",
-          "w-6",
-          "h-6",
-          "flex",
-          "justify-center",
-          "items-center",
-          "text-white",
-          "font-bold",
-          "leading-none",
-          "max-sm:w-6",
-          "max-sm:h-6",
-          "max-sm:text-xs"
-        )}
-      >
-        {cart.shoppingCartItems.length}
-      </div>
-    ) : null;
   return (
     <div
       className={clsx(
@@ -105,7 +80,9 @@ export default async function FloatActionButtons({
             />
             <span className="relative">
               購物車
-              {itemsCount}
+              <Suspense fallback={null}>
+                <CartBadge />
+              </Suspense>
             </span>
           </Link>
         </div>

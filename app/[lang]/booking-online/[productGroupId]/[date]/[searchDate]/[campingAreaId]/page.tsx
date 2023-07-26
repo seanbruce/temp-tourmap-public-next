@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import Link from "next/link";
 import CampingAreaList, {
   Loading as CampingAreaListLoading,
 } from "./_components/camping-area-list";
@@ -12,8 +13,8 @@ import { getCartByUser } from "@/apis/get-cart-by-user";
 import FloatActionButtons, {
   FloatActionButton,
 } from "@/components/float-action-buttons";
-import QuickCheckButton from "./_components/quick-check-button";
-import { quickCheckAction } from "@/actions/quick-check-action";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
 
 interface PageProps {
   params: {
@@ -70,23 +71,30 @@ export default async function Page({
           productGroupId={productGroupId}
         />
       </Suspense>
-      <Suspense fallback={null}>
-        <FloatActionButtons
-          lang={lang}
-          stepBackwardBtn={null}
-          stepForwardBtn={
-            isEmptyCart ? (
-              <FloatActionButton disabled={isEmptyCart}>
-                請選擇一個產品
-              </FloatActionButton>
-            ) : (
-              <form action={quickCheckAction}>
-                <QuickCheckButton />
-              </form>
-            )
-          }
-        />
-      </Suspense>
+      <FloatActionButtons
+        lang={lang}
+        stepBackwardBtn={null}
+        stepForwardBtn={
+          isEmptyCart ? (
+            <FloatActionButton disabled={isEmptyCart}>
+              請選擇一個產品
+            </FloatActionButton>
+          ) : (
+            <FloatActionButton>
+              <Link
+                href={`/${lang}/additional-service/${productGroupId}/${date}/${searchDate}/${campingAreaId}`}
+                className="w-full h-full inline-flex justify-center items-center"
+              >
+                <span className="inline-flex leading-none">
+                  <span className="hidden laptop:inline mr-2">STEP:3</span>
+                  <span className="mr-2 translate-y-[0.5px]">選擇服務</span>
+                  <FontAwesomeIcon icon={faCaretRight} className="w-2 h-4" />
+                </span>
+              </Link>
+            </FloatActionButton>
+          )
+        }
+      />
     </>
   );
 }
