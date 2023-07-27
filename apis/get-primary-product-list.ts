@@ -1,4 +1,5 @@
 import "server-only";
+import client from "./client";
 import { RequiredDeep } from "type-fest";
 import { paths } from "@/type/api";
 import { NEXT_PUBLIC_API_URL } from "@/environments";
@@ -31,7 +32,7 @@ export const getPrimaryProductList = async (
   if (params.query.CampingName) {
     url += `&CampingName=${params.query.CampingName}`;
   }
-  const res = await fetch(`${NEXT_PUBLIC_API_URL}${url}`, {
+  const res = await client(`${NEXT_PUBLIC_API_URL}${url}`, {
     next: { revalidate: 60 },
   });
   const json = await res.json();

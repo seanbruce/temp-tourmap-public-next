@@ -1,4 +1,5 @@
 import "server-only";
+import client from "./client";
 import { RequiredDeep } from "type-fest";
 import { paths } from "@/type/api";
 import { NEXT_PUBLIC_API_URL } from "@/environments";
@@ -17,7 +18,7 @@ export const preload = (params: GetPrimaryProductDetailParams) => {
 export const getPrimaryProductDetail = async (
   params: GetPrimaryProductDetailParams
 ) => {
-  const res = await fetch(
+  const res = await client(
     `${NEXT_PUBLIC_API_URL}/api/product-service/products/camping-product-detail/${params.path.productId}`,
     { next: { revalidate: 60 } }
   );

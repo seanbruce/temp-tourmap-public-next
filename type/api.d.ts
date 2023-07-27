@@ -14603,11 +14603,11 @@ export interface paths {
       };
     };
   };
-  "/api/product-service/product-group/first-can-booking-date/{productGroupId}": {
+  "/api/product-service/product-group/{id}/first-can-booking-date": {
     get: {
       parameters: {
         path: {
-          productGroupId: string;
+          id: string;
         };
       };
       responses: {
@@ -14617,6 +14617,73 @@ export interface paths {
             "text/plain": components["schemas"]["Tourmap.ProductService.ProductGroups.ProductGroupDto+FirstCanBookingDate"];
             "application/json": components["schemas"]["Tourmap.ProductService.ProductGroups.ProductGroupDto+FirstCanBookingDate"];
             "text/json": components["schemas"]["Tourmap.ProductService.ProductGroups.ProductGroupDto+FirstCanBookingDate"];
+          };
+        };
+        /** @description Bad Request */
+        400: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Unauthorized */
+        401: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Forbidden */
+        403: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Not Found */
+        404: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Server Error */
+        500: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+        /** @description Server Error */
+        501: {
+          content: {
+            "text/plain": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "application/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+            "text/json": components["schemas"]["Volo.Abp.Http.RemoteServiceErrorResponse"];
+          };
+        };
+      };
+    };
+  };
+  "/api/product-service/product-group/{id}/time-in-advance-setting": {
+    get: {
+      parameters: {
+        path: {
+          id: string;
+        };
+      };
+      responses: {
+        /** @description Success */
+        200: {
+          content: {
+            "text/plain": components["schemas"]["Tourmap.ProductService.ProductGroups.ProductGroupDto+TimeInAdvance"];
+            "application/json": components["schemas"]["Tourmap.ProductService.ProductGroups.ProductGroupDto+TimeInAdvance"];
+            "text/json": components["schemas"]["Tourmap.ProductService.ProductGroups.ProductGroupDto+TimeInAdvance"];
           };
         };
         /** @description Bad Request */
@@ -22893,7 +22960,12 @@ export interface components {
     "Tourmap.ProductService.ProductGroups.ProductGroupDto+FirstCanBookingDate": {
       /** Format: date-time */
       date?: string;
-      canBooking?: boolean;
+    };
+    "Tourmap.ProductService.ProductGroups.ProductGroupDto+TimeInAdvance": {
+      /** Format: int32 */
+      maxDaysInAdvance?: number;
+      /** Format: int32 */
+      minDaysInAdvance?: number;
     };
     "Tourmap.ProductService.ProductGroups.ProductGroupDto+WithNavigationProperties": {
       productGroup?: components["schemas"]["Tourmap.ProductService.ProductGroups.ProductGroupDto"];

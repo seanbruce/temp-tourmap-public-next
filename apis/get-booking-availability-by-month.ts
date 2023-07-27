@@ -2,6 +2,7 @@ import "server-only";
 import { RequiredDeep } from "type-fest";
 import { paths } from "@/type/api";
 import { NEXT_PUBLIC_API_URL } from "@/environments";
+import client from "./client";
 import tags from "./tags";
 
 export type GetBookingAvailabilityByMonthResponse = RequiredDeep<
@@ -19,7 +20,7 @@ export const preload = (props: GetBookingAvailabilityByMonthParams) => {
 export const getBookingAvailabilityByMonth = async (
   props: GetBookingAvailabilityByMonthParams
 ) => {
-  const res = await fetch(
+  const res = await client(
     `${NEXT_PUBLIC_API_URL}/api/product-service/product-group/booking-month-calendar/${props.path.productGroupId}?month=${props.query.month}`,
     {
       next: { revalidate: 60, tags: [tags.bookingAvailability] },
