@@ -1,8 +1,7 @@
-import { motion } from 'framer-motion';
-import { faTrashCan, faBars } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { clsx } from 'clsx';
-import { AdditionServiceInCart } from '../../../../../hooks/use-user-cart-query';
+import { motion } from "framer-motion";
+import { faTrashCan, faBars } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { clsx } from "clsx";
 
 function AdditionAttribute({
   title,
@@ -20,7 +19,7 @@ function AdditionAttribute({
 }
 
 interface AdditionServiceItemProps {
-  additionService: AdditionServiceInCart;
+  additionService: any;
   optionRevealedServiceId: string | null;
   setOptionRevealedServiceId: React.Dispatch<
     React.SetStateAction<string | null>
@@ -47,7 +46,7 @@ function AdditionServiceItem({
         });
       }}
     >
-      <motion.div layout className={clsx('p-2 grow')}>
+      <motion.div layout className={clsx("p-2 grow")}>
         <AdditionAttribute title="名稱">
           {additionService.extraProductName}
         </AdditionAttribute>
@@ -82,20 +81,20 @@ function AdditionServiceItem({
       <motion.div
         layout
         animate={{
-          width: isRevealed ? '80px' : '20px',
-          backgroundColor: isRevealed ? '#EF4444' : '#dddddd',
+          width: isRevealed ? "80px" : "20px",
+          backgroundColor: isRevealed ? "#EF4444" : "#dddddd",
         }}
         className={clsx(
-          'overflow-hidden',
-          'flex',
-          'justify-center',
-          'items-center',
-          'bg-red-500'
+          "overflow-hidden",
+          "flex",
+          "justify-center",
+          "items-center",
+          "bg-red-500"
         )}
         onClick={(event) => {
           event.stopPropagation();
           if (isRevealed) {
-            console.log('delete');
+            console.log("delete");
           } else {
             setOptionRevealedServiceId(additionService.extraProductId);
           }

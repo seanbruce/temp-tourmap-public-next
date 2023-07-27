@@ -6,7 +6,7 @@ import Button from "@/components/button";
 interface AdditionServiceListProps {
   primaryProductId: string;
   date: string;
-  additionServices: AdditionServiceInCart[];
+  additionServices: any;
 }
 
 function AdditionServiceList({
@@ -27,7 +27,7 @@ function AdditionServiceList({
   return (
     <div className="p-2 pr-0 flex flex-col gap-2">
       <div className="bg-white rounded overflow-hidden">
-        {additionServices.map((addition) => (
+        {additionServices.map((addition: any) => (
           <AdditionServiceItem
             key={addition.extraProductId}
             additionService={addition}
