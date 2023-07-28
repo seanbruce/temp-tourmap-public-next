@@ -169,12 +169,6 @@ export default function PrimaryProductSKU({
 
   const freeAdditionServices = selectedSKUId ? (
     <div>
-      <div
-        className="text-slate-700 text-sm flex flex-nowrap items-center line-clamp-2"
-        title={description}
-      >
-        {description}
-      </div>
       <div className="flex my-1">
         <Link
           href={`/${lang}/primary-product-detail/${selectedSKUId}/${selectedDate}`}

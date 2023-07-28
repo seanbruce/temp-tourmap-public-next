@@ -94,7 +94,6 @@ function AdditionServiceItem({
         onClick={(event) => {
           event.stopPropagation();
           if (isRevealed) {
-            console.log("delete");
           } else {
             setOptionRevealedServiceId(additionService.extraProductId);
           }

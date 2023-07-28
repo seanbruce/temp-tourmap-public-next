@@ -25,7 +25,6 @@ interface PageProps {
 export default async function Page({
   params: { lang, productGroupId, date, searchDate, campingAreaId },
 }: PageProps) {
-  console.log({ lang, productGroupId, date, searchDate, campingAreaId });
   return (
     <>
       <CompanyCarousel />

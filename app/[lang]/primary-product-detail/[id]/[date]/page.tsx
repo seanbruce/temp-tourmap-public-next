@@ -1,3 +1,4 @@
+"use server";
 import { getCartByUser } from "@/apis/get-cart-by-user";
 import { getPrimaryProductDetail } from "@/apis/get-primary-product-detail";
 import FloatActionBar from "@/components/float-action-bar";
@@ -5,6 +6,7 @@ import PageContainer from "@/components/page-container";
 import AddCartButton from "./_components/add-cart-button";
 import RemoveCartButton from "./_components/remove-cart-button";
 import Carousel from "@/components/carousel";
+import "./_components/editor-display.css";
 
 interface PageProps {
   params: {
@@ -25,6 +27,9 @@ export default async function Page({ params: { id, date } }: PageProps) {
     primaryProductDetailData,
     cartData,
   ]);
+
+  const projectDescription = primaryProductDetail.project.description ?? "";
+  const productDescription = primaryProductDetail.product.description ?? "";
 
   const isInCart = cart?.shoppingCartItems?.find(
     (item) =>
@@ -51,7 +56,28 @@ export default async function Page({ params: { id, date } }: PageProps) {
         {primaryProductDetail.product.displayName}
       </p>
       <div className="mb-4">
-        <span>{primaryProductDetail.product.description}</span>
+        <p className="border-b border-brand-gold">產品說明</p>
+        {projectDescription ? (
+          <div
+            className="p-2 e-rte-content mb-2"
+            dangerouslySetInnerHTML={{
+              __html: projectDescription,
+            }}
+          />
+        ) : (
+          <div>暫無說明</div>
+        )}
+        <p className="border-b border-brand-gold">專案說明</p>
+        {productDescription ? (
+          <div
+            className="p-2 e-rte-content"
+            dangerouslySetInnerHTML={{
+              __html: productDescription,
+            }}
+          />
+        ) : (
+          <div>暫無說明</div>
+        )}
       </div>
       <p className="flex justify-between items-end mb-4">
         <span>產品價格</span>

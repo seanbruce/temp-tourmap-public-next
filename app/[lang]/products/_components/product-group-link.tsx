@@ -17,7 +17,6 @@ export default async function ProductGroupLink({
   lang,
   campingAreaId,
 }: ProductGroupLinkProps) {
-  console.log(productGroup.productGroup.id);
   const available = await getFirstAvailableDate({
     path: { id: productGroup.productGroup.id },
   });
